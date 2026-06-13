@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: url(sdfc-bank-logo1.png);
+    background-size:cover;
+    background-position: center;
+   
+}
+h1{
+   
+    font-size: 67px;
+}
+h2{
+   
+    font-size: 37px;
+}
+a{
+   
+    font-size: 22px;
+    color: #e7e2de;
+    text-decoration: none;
+    color: #fff;
+    font-family:12;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+    
+}
+a:hover{
+    color: #ff7200;
+} 
+.Search{
+    width: 330px;
+    float: left;
+    margin-left: 1150px;
+} 
+.srch{
+    font-family: 'Times New Roman';
+    width: 200px;
+    height: 40px;
+    background: transparent;
+    border:1px solid#f0e8e3 ;
+    margin-top: 14px;
+    color: #fff;
+    border-right: none;
+    font-size: 16px;
+    float: left;
+    padding: 7px;
+    border-bottom-right-radius: 5px;
+    border-top-left-radius: 5px;
+
+}
+.btn{
+    width: 100px;
+    height: 40px;
+    background: #8c0000;
+    border: 2px solid #5e0502;
+    margin-top: 13px;
+    color: #fff;
+    font-size: 15px; 
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px; 
+}
+.btn:focus{
+    outline: none;
+
+}
+.srch:focus{
+    outline: none;
+
+} 

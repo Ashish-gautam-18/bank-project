@@ -1,0 +1,383 @@
+/* --- Core Reset and Box Safety Configuration --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* --- Hero Image Slider Layout (3 Pages Inside 1) --- */
+.slider-container {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    background-color: #001a33;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out, transform 1.2s ease;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transform: scale(1.03);
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+    transform: scale(1);
+}
+
+.slide-content {
+    text-align: center;
+    color: #ffffff;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.slide-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.slide-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #ecf0f1;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* --- Text Entrance Animations --- */
+.animate-text {
+    opacity: 0;
+    transform: translateY(25px);
+    animation: fadeInUp 0.8s forwards ease-out;
+}
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Slider UI Navigation Buttons --- */
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 12px 16px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+.slider-nav:hover { background: rgba(0, 210, 255, 0.8); }
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 8px;
+}
+.dot {
+    width: 12px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.dot.active, .dot:hover { background: #00d2ff; width: 24px; border-radius: 6px; }
+
+/* --- Slider Interactive Call to Action Elements --- */
+.slide-actions {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    padding: 12px 28px;
+    background: #00d2ff;
+    color: #002850;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,210,255,0.3);
+    transition: all 0.3s;
+}
+.hero-btn:hover { background: #ffffff; transform: translateY(-2px); }
+
+.hero-btn-outline {
+    padding: 12px 28px;
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.hero-btn-outline:hover { background: #ffffff; color: #002850; transform: translateY(-2px); }
+
+/* --- Responsive Navigation Engine --- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #002850;
+    border-bottom: 3px solid #0056b3;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bank-logo {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+.logo-text {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.menu a {
+    color: #bdc3c7;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    transition: color 0.3s;
+}
+.menu a:hover, .menu a.active { color: #00d2ff; }
+
+.Search form {
+    display: flex;
+    gap: 5px;
+}
+
+.srch {
+    padding: 8px 12px;
+    border-radius: 4px;
+    border: 1px solid #0056b3;
+    outline: none;
+    font-size: 13px;
+    width: 170px;
+}
+
+.btn {
+    padding: 8px 14px;
+    background: #00d2ff;
+    border: none;
+    color: #002850;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn:hover { background: #ffffff; }
+
+/* --- Services Layout Architecture (Fixed Wrap Overflows) --- */
+.services-section {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 32px;
+    color: #002850;
+    margin-bottom: 40px;
+}
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #00d2ff;
+    margin: 8px auto 0;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 30px 24px;
+    border-radius: 6px;
+    width: 320px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid #002850;
+    transition: all 0.4s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-top-color: #00d2ff;
+    box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+    color: #002850;
+    font-size: 19px;
+}
+
+.service-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* --- Interactive Modal Box Window Overlay --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box {
+    background: #ffffff;
+    border-radius: 6px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-box {
+    transform: scale(1);
+}
+
+.modal-header {
+    background: #002850;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.close-modal-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 25px 20px;
+    font-size: 15px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.modal-body p { margin-bottom: 12px; }
+
+.modal-footer {
+    padding: 12px 20px;
+    background: #f8f9fa;
+    text-align: right;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.modal-close-btn {
+    padding: 8px 20px;
+    background: #002850;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.modal-close-btn:hover { background: #00d2ff; color: #002850; }
+
+/* --- Footer Area styling --- */
+footer {
+    background: #001a33;
+    color: #7f8c8d;
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 13px;
+    border-top: 1px solid #002850;
+}
