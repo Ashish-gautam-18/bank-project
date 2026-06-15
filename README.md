@@ -1,4 +1,4 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/91d6f34b-e242-4435-9c9a-0aaef298bda7" /># 🚀 Spring Boot JSP & MySQL Project
+# 🚀 Spring Boot JSP & MySQL Project
 
 This is a full-stack web application built using Spring Boot, JSP, and a MySQL database.
 
@@ -42,9 +42,50 @@ CREATE TABLE IF NOT EXISTS accounts (
 
 
 
-# S   SREENSHOT OF PROJECT UI 
+#   SREENSHOTS OF PROJECT
+  ## Operations Management Dashboard 
    <img width="1920" height="1080" alt="Screenshot (169)" src="https://github.com/user-attachments/assets/2b48ea8b-5150-4e26-876c-12136351ba6b" />
 
+   ## Home Page 
+  <img width="1920" height="1080" alt="Screenshot (156)" src="https://github.com/user-attachments/assets/bab9ac73-ac3a-4ed8-bbef-aa16eb0e88ad" />
+
+   <img width="1920" height="1080" alt="Screenshot (157)" src="https://github.com/user-attachments/assets/9817d266-364e-4f1f-9f67-5488584c7646" />
+
+   ## SDFC Security Notice
+   <img width="1920" height="1080" alt="Screenshot (170)" src="https://github.com/user-attachments/assets/3ebc32ee-224d-4ddc-82cb-480a0718b05a" />
+
+
+   ## Open New Account
+   <img width="1920" height="1080" alt="Screenshot (159)" src="https://github.com/user-attachments/assets/c3c97840-44c9-4687-a1a4-de114e201d6c" />
+
+   ## Cheak Amount Balance 
+   <img width="1920" height="1080" alt="Screenshot (160)" src="https://github.com/user-attachments/assets/0af44c06-6d71-4fda-832a-0c30d2b196ca" />
+
+   ## Instant Fund Deposit
+   <img width="1920" height="1080" alt="Screenshot (161)" src="https://github.com/user-attachments/assets/73d0b63a-b767-4bff-b7ee-fc5219a4c044" />
+
+   ## Secure Cash Withdrawal
+   <img width="1920" height="1080" alt="Screenshot (162)" src="https://github.com/user-attachments/assets/54c42525-7393-4472-8278-1eaf50bd737c" />
+
+   ## Instant Fund Transfer
+   <img width="1920" height="1080" alt="Screenshot (163)" src="https://github.com/user-attachments/assets/961ed0ac-5f60-4b5a-af20-a67a5b7d7232" />
+
+   ## Account Deactivation
+   <img width="1920" height="1080" alt="Screenshot (165)" src="https://github.com/user-attachments/assets/bcab7f5b-f4d7-47ef-958c-5b384854a69e" />
+
+   # ABOUT SDFC 
+   <img width="1920" height="1080" alt="Screenshot (168)" src="https://github.com/user-attachments/assets/61cacfb1-1a8b-432e-b34c-79fd43a89721" />
+<img width="1920" height="1080" alt="Screenshot (167)" src="https://github.com/user-attachments/assets/958e18b1-5304-4d94-911a-5a4d79b34eed" />
+<img width="1920" height="1080" alt="Screenshot (166)" src="https://github.com/user-attachments/assets/d16045e2-b2d3-44d9-b52c-294fdbad0671" />
+
+    
+
+
+
+
+   
+
+ 
 
 
 
