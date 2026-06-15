@@ -1,4 +1,4 @@
-# 🚀 Spring Boot JSP & MySQL Project
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/91d6f34b-e242-4435-9c9a-0aaef298bda7" /># 🚀 Spring Boot JSP & MySQL Project
 
 This is a full-stack web application built using Spring Boot, JSP, and a MySQL database.
 
@@ -39,3 +39,32 @@ CREATE TABLE IF NOT EXISTS accounts (
 1. Import the project into your IDE (Eclipse / IntelliJ / STS).
 2. Right-click on the project and select `Run As -> Spring Boot App`.
 3. Open your browser and navigate to: `http://localhost:8080`
+
+
+
+# S   SREENSHOT OF PROJECT UI 
+   <img width="1920" height="1080" alt="Screenshot (169)" src="https://github.com/user-attachments/assets/2b48ea8b-5150-4e26-876c-12136351ba6b" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
