@@ -90,4 +90,16 @@ public class AdminDashboardController {
         } catch (Exception ignored) {}
         return "redirect:/";
     }
+    
+    @GetMapping("/deleteAccount")
+    public String deleteAccount(@RequestParam("acc_number") long accNum) {
+        try {
+            // Seedhe account number (Primary Key) se data delete hoga
+            bankRepo.deleteById(accNum);
+        } catch (Exception ignored) {}
+        
+        // Delete hone ke baad wapas main dashboard (Admin page route "/") par redirect ho jayega
+        return "redirect:/";
+    }
+
 }

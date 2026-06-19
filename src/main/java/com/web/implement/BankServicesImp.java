@@ -234,6 +234,13 @@ public class BankServicesImp implements BankService {
 	    }
 	    return bank;
 	}
+	
+	
+	@Override
+	public void deleteAccountByNumber(long acc_number) {
+	    repo.deleteById(acc_number);
+	}
+
 }
 
 

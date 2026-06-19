@@ -13,5 +13,7 @@ public interface BankService {
 	public Bank moneyTransfer(Bank senderBank, long targetAcc, double transferAmount);
 	public String closeAccount(Bank bank);
 	Bank getAccountByNumber(long acc_number);
+	void deleteAccountByNumber(long acc_number);
+
 
 }

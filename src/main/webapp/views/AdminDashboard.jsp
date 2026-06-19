@@ -26,7 +26,7 @@
     <main class="main-workspace">
         <header class="workspace-header">
             <h2>Operations Management Dashboard</h2>
-            <div class="connection-pill">MySQL Core Connection Live</div>
+            <div class="connection-pill">H2 File Connection Live</div>
         </header>
 
         <!-- Interactive Bank Status Summary Metrics Cards -->
@@ -80,6 +80,7 @@
                             <th>Contact Mobile</th>
                             <th>Registered Address</th>
                             <th>Available Balance</th>
+                            <th>Actions</th> <!-- 1. ADDED: Naya Column Header -->
                         </tr>
                     </thead>
                     <tbody>
@@ -88,7 +89,7 @@
                             if (accounts == null || accounts.isEmpty()) { 
                         %>
                             <tr>
-                                <td colspan="5" style="text-align: center; color: #888; padding: 30px;">
+                                <td colspan="6" style="text-align: center; color: #888; padding: 30px;">
                                     No active database bank records match your filter criteria.
                                 </td>
                             </tr>
@@ -102,6 +103,14 @@
                                 <td><%= acc.getMobile() %></td>
                                 <td><%= acc.getAddress() %></td>
                                 <td class="currency-text">₹<%= acc.getAmount() %></td>
+                                <td>
+                                    <!-- 2. ADDED: Java Scriplets ke anusar Delete Link with dynamic account number -->
+                                    <a href="${pageContext.request.contextPath}/deleteAccount?acc_number=<%= acc.getAcc_number() %>" 
+                                       onclick="return confirm('Confirm : Are you sure to do this.?');" 
+                                       style="color: #ff4d4d; font-weight: bold; text-decoration: none; border: 1px solid #ff4d4d; padding: 4px 8px; border-radius: 4px; background: rgba(255,77,77,0.1);">
+                                       Delete
+                                    </a>
+                                </td>
                             </tr>
                         <% 
                                 } 

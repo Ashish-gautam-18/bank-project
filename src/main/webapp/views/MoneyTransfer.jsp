@@ -223,7 +223,7 @@
     <nav class="navbar">
         <div class="logo">SDFC Bank</div>
         <div class="menu">
-			<a href="/" class="active">HOME</a>
+			<a href="/client-home" class="active">HOME</a>
 			         <a href="/account">NEW ACCOUNT</a>
 			         <a href="/balance">BALANCE</a>
 			         <a href="/depo">DEPOSIT</a>

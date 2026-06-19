@@ -194,20 +194,21 @@
     </style>
 </head>
 <body>
-    <div class="background-overlay"></div>
+	
+ <div class="background-overlay"></div>
     
     <!-- Central SDFC Navbar Context links -->
-    <nav class="navbar">
+                          <nav class="navbar">
         <div class="logo">SDFC Bank</div>
 		<div class="menu">
-			<a href="/" class="active">HOME</a>
+			         <a href="/client-home" class="active">HOME</a>
 			         <a href="/account">NEW ACCOUNT</a>
 			         <a href="/balance">BALANCE</a>
 			         <a href="/depo">DEPOSIT</a>
 			         <a href="/withdrow">WITHDRAW</a>
 			         <a href="/Money">TRANSFER</a>
 			         <a href="/close">CLOSE A/C</a>
-			        <a href="${pageContext.request.contextPath}/views/about-rules.jsp">ABOUT</a>
+			         <a href="${pageContext.request.contextPath}/views/about-rules.jsp">ABOUT</a>
 			     </div>
     
     </nav>
