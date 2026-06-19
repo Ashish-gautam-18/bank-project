@@ -201,12 +201,12 @@
                     <h4>Priyanshu Rao Reddy</h4>
                     <p>Head of Risk & Compliance</p>
                 </div>
-            </div>
+            </div> 
         </div>
 
         <div class="statement-block">
-            <img src="https://unsplash.com" alt="Meeting Room">
-            <div>
+			<img src="meeting-room.jpg" alt="Meeting Room">
+			   <div>
                 <h3>Our Governance Pledge</h3>
                 <p>The SDFC Board of Directors consistently reviews security matrices, corporate risk exposure, and audit processes to assure regulatory alignment with Apex Central Bank standards. Our framework protects minority stakeholders and optimizes asset management allocation protocols transparently.</p>
             </div>

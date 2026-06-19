@@ -4,8 +4,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDFC Bank Admin Console</title>
+    <title>SDFC Bank</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/admin-style.css">
+    
+    <!-- Ultra Dynamic Styling Enhancement Block -->
+    <style>
+        /* Target exclusive exit-link class safely */
+        .sidebar-menu li .exit-link {
+            display: inline-flex !important;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 16px !important;
+            margin: 15px 12px !important;
+            background: linear-gradient(135deg, #0d251c, #004d26) !important;
+            color: #00e676 !important;
+            font-weight: bold !important;
+            border: 1px solid rgba(0, 230, 118, 0.4) !important;
+            border-radius: 30px !important;
+            text-decoration: none !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+            
+            /* Custom spring-bounce curve animation timing */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+        }
+
+        /* Extreme hover behavior: pops out, transforms gradient, and glows */
+        .sidebar-menu li .exit-link:hover {
+            transform: scale(1.12) translateY(-3px) !important;
+            background: linear-gradient(135deg, #00e676, #007a3d) !important;
+            color: #ffffff !important;
+            border-color: #ffffff !important;
+            box-shadow: 0 8px 20px rgba(0, 230, 118, 0.5), 0 0 30px rgba(0, 230, 118, 0.2) !important;
+        }
+
+        /* Isolate the home icon inside the link wrapper */
+        .home-icon {
+            display: inline-block;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        /* Subtle animated jump and rotate effect for the home element */
+        .sidebar-menu li .exit-link:hover .home-icon {
+            transform: translateY(-4px) scale(1.2) rotate(-5deg);
+        }
+    </style>
 </head>
 <body>
 
@@ -18,7 +60,11 @@
             <li><a href="#" onclick="togglePanel('transfer-panel')">🔄 Transfer Funds</a></li>
             
             <!-- Redirection trigger matching your request to jump over to client home layout -->
-            <li><a href="/client-home" class="exit-link">🏠 Client Home Portal</a></li>
+            <li>
+                <a href="/client-home" class="exit-link">
+                    <span class="home-icon">🏠</span> Client Home Portal
+                </a>
+            </li>
         </ul>
     </aside>
 
@@ -80,7 +126,7 @@
                             <th>Contact Mobile</th>
                             <th>Registered Address</th>
                             <th>Available Balance</th>
-                            <th>Actions</th> <!-- 1. ADDED: Naya Column Header -->
+                            <th>Actions</th> 
                         </tr>
                     </thead>
                     <tbody>
@@ -104,7 +150,6 @@
                                 <td><%= acc.getAddress() %></td>
                                 <td class="currency-text">₹<%= acc.getAmount() %></td>
                                 <td>
-                                    <!-- 2. ADDED: Java Scriplets ke anusar Delete Link with dynamic account number -->
                                     <a href="${pageContext.request.contextPath}/deleteAccount?acc_number=<%= acc.getAcc_number() %>" 
                                        onclick="return confirm('Confirm : Are you sure to do this.?');" 
                                        style="color: #ff4d4d; font-weight: bold; text-decoration: none; border: 1px solid #ff4d4d; padding: 4px 8px; border-radius: 4px; background: rgba(255,77,77,0.1);">

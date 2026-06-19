@@ -33,7 +33,7 @@ function currentSlide(index) {
 function startAutoSlide() {
     slideInterval = setInterval(() => {
         showSlide(currentSlideIndex + 1);
-    }, 6000); // Transitions slide variations every 6 seconds
+    }, 3000); // Transitions slide variations every 3 sec
 }
 
 // --- Interactive Popup Engine Control Sequences ---

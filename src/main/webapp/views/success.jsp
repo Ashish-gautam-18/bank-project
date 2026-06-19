@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDFC Bank | Registration Successful</title>
+    <title>SDFC Bank | Account Creation</title>
     <style>
         * {
             margin: 0;
@@ -206,7 +206,7 @@
 
             <h1 class="success-title">Account Created Successfully!</h1>
             <p class="success-message">
-                Welcome to SDFC Bank, Ashish. Your dynamic internet banking portfolio has been generated. You can now manage deposits and live card routing panels immediately.
+                Welcome to SDFC Bank. Great!! , Your dynamic internet banking portfolio has been generated. You can now manage deposits and live card routing panels immediately.
             </p>
             
 			<a href="${pageContext.request.contextPath}/views/Home.jsp" class="action-link">Back to Dashboard</a>
