@@ -25,13 +25,13 @@ CREATE TABLE IF NOT EXISTS accounts (
     mobile BIGINT NOT NULL
 );
 
---  Testing ke liye sample account data (Optional)
+--  Testing ke liye sample account data (Optional) 
 
 --  INSERT INTO accounts (acc_number, name, password, amount, address, mobile) VALUES (1001001001, 'Rahul Kumar', 'securePass123', 5000.0, 'Delhi, India', 9876543210);
  )
 
 
- # This is important to update in your project 
+ # This is important to update in your project ( VVI )
 3. Update your MySQL `username` and `password` in the `src/main/resources/application.properties` file.
 
 
@@ -74,10 +74,13 @@ CREATE TABLE IF NOT EXISTS accounts (
    ## Account Deactivation
    <img width="1920" height="1080" alt="Screenshot (165)" src="https://github.com/user-attachments/assets/bcab7f5b-f4d7-47ef-958c-5b384854a69e" />
 
-   # ABOUT SDFC 
+   # ABOUT SDFC
+   1
    <img width="1920" height="1080" alt="Screenshot (168)" src="https://github.com/user-attachments/assets/61cacfb1-1a8b-432e-b34c-79fd43a89721" />
-<img width="1920" height="1080" alt="Screenshot (167)" src="https://github.com/user-attachments/assets/958e18b1-5304-4d94-911a-5a4d79b34eed" />
-<img width="1920" height="1080" alt="Screenshot (166)" src="https://github.com/user-attachments/assets/d16045e2-b2d3-44d9-b52c-294fdbad0671" />
+   2  
+   <img width="1920" height="1080" alt="Screenshot (167)" src="https://github.com/user-attachments/assets/958e18b1-5304-4d94-911a-5a4d79b34eed" />
+   3
+   <img width="1920" height="1080" alt="Screenshot (166)" src="https://github.com/user-attachments/assets/d16045e2-b2d3-44d9-b52c-294fdbad0671" />
 
     
 
