@@ -3,7 +3,7 @@
 This is a full-stack web application built using Spring Boot, JSP, and a MySQL database.
 
 ## 🛠️ Technologies Used
-- **Backend:** Spring Boot (Java)
+- **Backend:** Spring Boot
 - **Frontend:** JSP, CSS, JavaScript
 - **Database:** MySQL
 - **Build Tool:** Maven
@@ -11,7 +11,7 @@ This is a full-stack web application built using Spring Boot, JSP, and a MySQL d
 ## 💻 Setup and Installation (How to Run on Local System)
 
 ### 1. Database Setup
-1. Create a new database in your MySQL server.
+1. Create a new database in your MySQL server or workbench.
 2. -- Bank Project Database Schema
 
    -- Run this query in your MySQL Server before starting the Spring Boot application
