@@ -1,5 +1,7 @@
 package com.web.implement;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -93,8 +95,7 @@ public class BankServicesImp implements BankService {
 //	}
 //}
 	
-	
-	@Override
+    @Override
 	public Bank getBalance(Bank bank) {
 	    // Check if account exists first to avoid errors
 	    return repo.findById(bank.getAcc_number())
@@ -108,7 +109,7 @@ public class BankServicesImp implements BankService {
 	
 	@Override
 	public Bank moneyDeposit(Bank bank) {
-		 Bank bank1=repo.findById(bank.getAcc_number()).get();
+		Bank bank1 = repo.findById(bank.getAcc_number()).orElse(null);
 		
 		 if(bank.getAcc_number()==bank1.getAcc_number()&&
 				 bank.getName().equals(bank1.getName())&&
@@ -127,7 +128,7 @@ public class BankServicesImp implements BankService {
 	@Override
 	public Bank moneyWithdrow(Bank bank) {
 		
-		Bank bank1=repo.findById(bank.getAcc_number()).get();
+		Bank bank1 = repo.findById(bank.getAcc_number()).orElse(null);
 		
 		 if(bank.getAcc_number()==bank1.getAcc_number()&&
 				 bank.getName().equals(bank1.getName())&&
@@ -159,28 +160,45 @@ public class BankServicesImp implements BankService {
 	
 
 	@Override
+	@Transactional
 	public Bank moneyTransfer(Bank bank, long targetAcc, double amount) {
-	    // 1. Sender ko dhoondo aur verify karo
+	    // 1. भेजने वाले (Sender) को ढूंढें
 	    Bank sender = repo.findById(bank.getAcc_number()).orElse(null);
-	    
-	    // 2. Receiver ko dhoondo
-	    Bank receiver = repo.findById(targetAcc).orElse(null);
-
-	    if (sender != null && receiver != null && 
-	        sender.getPassword().equals(bank.getPassword()) && 
-	        sender.getAmount() >= amount) {
-	        
-	        // Calculation
-	        sender.setAmount(sender.getAmount() - amount);
-	        receiver.setAmount(receiver.getAmount() + amount);
-	        
-	        repo.save(sender);
-	        repo.save(receiver);
-	        
-	        return sender; // Success
+	    if (sender == null) {
+	        throw new RuntimeException("आपका अकाउंट नंबर रिकॉर्ड में नहीं मिला!");
 	    }
-	    return null; // Failure
+	    
+	    // 2. भेजने वाले का पासवर्ड चेक करें
+	    if (!sender.getPassword().equals(bank.getPassword())) {
+	        throw new RuntimeException("गलत पासवर्ड! कृपया दोबारा जांचें।");
+	    }
+
+	    // 3. पाने वाले (Receiver/Target) का अकाउंट चेक करें
+	    Bank receiver = repo.findById(targetAcc).orElse(null);
+	    if (receiver == null) {
+	        throw new RuntimeException("टारगेट अकाउंट नंबर मौजूद नहीं है!");
+	    }
+	    
+	    // 4. खुद के अकाउंट में ट्रांसफर ब्लॉक करें (Optional पर जरूरी)
+	    if (bank.getAcc_number() == targetAcc) {
+	        throw new RuntimeException("आप खुद के ही अकाउंट में पैसे ट्रांसफर नहीं कर सकते!");
+	    }
+	    
+	    // 5. बैलेंस चेक करें
+	    if (sender.getAmount() < amount) {
+	        throw new RuntimeException("अपरियाप्त बैलेंस! आपके खाते में पर्याप्त पैसे नहीं हैं।");
+	    }
+	    
+	    // सब सही होने पर ही कैलकुलेशन होगी
+	    sender.setAmount(sender.getAmount() - amount);
+	    receiver.setAmount(receiver.getAmount() + amount);
+	    
+	    repo.save(sender);
+	    repo.save(receiver);
+	    
+	    return sender; // Success होने पर अपडेटेड सेंडर रिटर्न करें
 	}
+
 
 	
 	

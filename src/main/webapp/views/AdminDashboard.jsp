@@ -72,7 +72,7 @@
     <main class="main-workspace">
         <header class="workspace-header">
             <h2>Operations Management Dashboard</h2>
-            <div class="connection-pill">H2 File Connection Live</div>
+            <div class="connection-pill">Live Connection Database</div>
         </header>
 
         <!-- Interactive Bank Status Summary Metrics Cards -->

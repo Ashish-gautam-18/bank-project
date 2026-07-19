@@ -111,9 +111,10 @@
 	        <a href="/client-home" class="active" style="white-space: nowrap;">HOME</a>
 	        
 	        <!-- Premium Dynamic Admin Button -->
-	        <a href="/" class="admin-btn" style="white-space: nowrap;">
-	            <span class="admin-icon">⚙️</span> ADMIN DASHBOARD
-	        </a>
+			<a href="/admin-dashboard" class="admin-btn" style="white-space: nowrap;">
+			    <span class="admin-icon">⚙️</span> ADMIN DASHBOARD
+			</a>
+
 	        
 	        <a href="/account" style="white-space: nowrap;">NEW ACCOUNT</a>
 	        <a href="/balance" style="white-space: nowrap;">BALANCE</a>

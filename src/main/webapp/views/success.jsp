@@ -209,7 +209,7 @@
                 Welcome to SDFC Bank. Great!! , Your dynamic internet banking portfolio has been generated. You can now manage deposits and live card routing panels immediately.
             </p>
             
-			<a href="${pageContext.request.contextPath}/views/Home.jsp" class="action-link">Back to Dashboard</a>
+			<a href="${pageContext.request.contextPath}/views/Home.jsp" class="action-link">Back to Home</a>
 
         </div>
     </div>

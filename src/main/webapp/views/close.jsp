@@ -179,11 +179,11 @@
 
             <h1 class="success-title">Account Closed!</h1>
             <p class="success-message">
-                Your request has been executed completely, Ashish. SDFC Bank records have successfully processed and archived the transaction ledger. Your active account profile is now safely closed.
+                Your request has been executed completely, User. SDFC Bank records have successfully processed and archived the transaction ledger. Your active account profile is now safely closed.
             </p>
             
         
-			<a href="${pageContext.request.contextPath}/views/Home.jsp" class="action-link">Back to Dashboard</a>
+			<a href="${pageContext.request.contextPath}/views/Home.jsp" class="action-link">Back to Home</a>
         </div>
     </div>
 </body>

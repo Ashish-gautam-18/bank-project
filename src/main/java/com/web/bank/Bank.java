@@ -23,7 +23,7 @@ public class Bank {
  
 	public Bank(long accountNumber,  String name, String password, double amount, String address, long mobile) {
 		super();
-		this.acc_number = acc_number; ;
+		this.acc_number = acc_number;
 		this.name = name;
 		this.password = password;
 		this.amount = amount;

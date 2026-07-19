@@ -17,8 +17,8 @@ public class AdminDashboardController {
     @Autowired
     private BankRepo bankRepo;
 
-    // 1. MODIFIED: Ab project run karte hi sabse pahle Admin Page hi khulega (URL: /)
-    @GetMapping("/")
+    // Admin dashboard layout base route
+    @GetMapping("/admin-dashboard")
     public String showDashboard(@RequestParam(value = "search", required = false) String search, Model model) {
         List<Bank> accountsList = new ArrayList<>();
 
@@ -30,7 +30,7 @@ public class AdminDashboardController {
                     accountsList.add(singleAccount);
                 }
             } catch (NumberFormatException e) {
-                // Invalid numeric characters ko bypass karne ke liye
+                // Invalid numeric structures handled cleanly
             }
         } else {
             bankRepo.findAll().forEach(accountsList::add);
@@ -43,19 +43,18 @@ public class AdminDashboardController {
         model.addAttribute("totalVault", totalVaultLiquidity);
         model.addAttribute("searchQuery", search);
 
-        return "AdminDashboard"; // /views/AdminDashboard.jsp load hoga
+        return "AdminDashboard"; 
     }
 
-    // 2. NEW: Client Home Page par jaane ke liye ek alag URL link (/client-home)
     @GetMapping("/client-home")
     public String showClientHomePage() {
-        return "Home"; // Aapka dynamic animated Home.jsp page load hoga
+        return "Home"; 
     }
 
-    // 3. MODIFIED: Search box functionality ko naye dashboard route ke mutabik update kiya
+    // Handled right-side navbar query action from Home.jsp smoothly
     @GetMapping("/findAccount")
     public String findAccountFromHome(@RequestParam("search_acc_number") String searchAccNumber) {
-        return "redirect:/?search=" + searchAccNumber;
+        return "redirect:/admin-dashboard?search=" + searchAccNumber;
     }
 
     @PostMapping("/admin/depo")
@@ -67,7 +66,7 @@ public class AdminDashboardController {
                 bankRepo.save(bankAccount);
             }
         } catch (Exception ignored) {}
-        return "redirect:/"; // Post action ke baad main root (Admin page) pr redirect hoga
+        return "redirect:/admin-dashboard"; 
     }
 
     @PostMapping("/admin/transfer")
@@ -88,18 +87,15 @@ public class AdminDashboardController {
                 }
             }
         } catch (Exception ignored) {}
-        return "redirect:/";
+        return "redirect:/admin-dashboard"; 
     }
     
     @GetMapping("/deleteAccount")
     public String deleteAccount(@RequestParam("acc_number") long accNum) {
         try {
-            // Seedhe account number (Primary Key) se data delete hoga
             bankRepo.deleteById(accNum);
         } catch (Exception ignored) {}
         
-        // Delete hone ke baad wapas main dashboard (Admin page route "/") par redirect ho jayega
-        return "redirect:/";
+        return "redirect:/admin-dashboard"; 
     }
-
 }

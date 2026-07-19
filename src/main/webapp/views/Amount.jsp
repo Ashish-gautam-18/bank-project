@@ -252,7 +252,7 @@
             
             <!-- Fixed Navigation Link Redirect pointing to Home.jsp inside views -->
            
-			<a href="${pageContext.request.contextPath}/views/Home.jsp" class="btn-home">Back to Dashboard</a>
+			<a href="${pageContext.request.contextPath}/views/Home.jsp" class="btn-home">Back to Home</a>
         </div>
     </div>
 </body>

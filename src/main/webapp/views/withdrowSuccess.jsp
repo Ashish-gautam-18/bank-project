@@ -226,7 +226,7 @@
             </div>
             
             <!-- FIXED: Redirecting through base landing route handler mapping -->
-            <a href="${pageContext.request.contextPath}/" class="btn-home">Back to Dashboard</a>
+            <a href="${pageContext.request.contextPath}/" class="btn-home">Back to Home</a>
 			  
         </div>
     </div>
