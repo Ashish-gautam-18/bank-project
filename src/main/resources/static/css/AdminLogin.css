@@ -1,0 +1,72 @@
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0d251c, #004d26);
+        }
+        .login-box {
+            background: #ffffff;
+            padding: 40px 36px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 360px;
+        }
+        .login-box h2 {
+            color: #004d26;
+            margin-bottom: 6px;
+            text-align: center;
+        }
+        .login-box p.subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            font-size: 14px;
+            color: #333;
+            margin-bottom: 6px;
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #00e676;
+        }
+        button {
+            width: 100%;
+            padding: 11px;
+            background: linear-gradient(135deg, #0d251c, #004d26);
+            color: #00e676;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .error-msg {
+            background: #fdecea;
+            color: #b3261e;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+    

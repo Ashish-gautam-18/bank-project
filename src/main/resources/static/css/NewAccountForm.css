@@ -1,0 +1,176 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Fixed Background Image Overlay */
+        .background-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                              url('/images/logo.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+        }
+
+        /* Fixed Viewport Configuration to block scrolling */
+        html, body {
+            height: 100%;
+            overflow: hidden; /* Disables page scrolling */
+        }
+
+        /* Navbar Layout */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: rgba(0, 40, 80, 0.95);
+            border-bottom: 2px solid #0056b3;
+            height: 10vh;
+        }
+
+        .logo {
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .menu a {
+            color: #bdc3c7;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .menu a:hover, .menu a.active {
+            color: #00d2ff;
+        }
+
+        /* Form Wrapper Layout */
+        .form-wrapper {
+            height: 90vh; /* Fills remaining screen perfectly */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        /* Transparent Glassmorphism Container */
+        .form-container {
+            background: rgba(255, 255, 255, 0.12); /* Semi-transparent white */
+            backdrop-filter: blur(10px); /* Blurs the background image underneath */
+            -webkit-backdrop-filter: blur(10px);
+            padding: 25px 35px;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 650px; /* Widened to fit columns */
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-container h2 {
+            color: #00d2ff; /* Changed to bright blue for visibility against dark backgrounds */
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        /* Two-Column Grid Setup */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Splits fields into 2 equal columns */
+            gap: 12px 20px; /* Tighter spacing to avoid overflows */
+        }
+
+        /* Spans the address text area across both columns */
+        .full-width {
+            grid-column: span 2;
+        }
+
+        .input-group {
+            text-align: left;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #ffffff; /* Crisp white labels */
+            margin-bottom: 5px;
+        }
+
+        .input-group input, .input-group textarea {
+            width: 100%;
+            padding: 8px 12px;
+            background: rgba(255, 255, 255, 0.9); /* Easy to read text inputs */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .input-group input:focus, .input-group textarea:focus {
+            border-color: #00d2ff;
+            box-shadow: 0 0 5px rgba(0, 210, 255, 0.5);
+        }
+
+        .input-group textarea {
+            resize: none;
+            height: 45px; /* Shorter textarea height */
+        }
+
+        /* Action Buttons Row */
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .btn-submit {
+            flex: 2;
+            padding: 10px;
+            background: #00d2ff;
+            color: #002850;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #ffffff;
+            color: #002850;
+        }
+
+        .btn-clear {
+            flex: 1;
+            padding: 10px;
+            background: rgba(231, 76, 60, 0.8);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-clear:hover {
+            background: #e74c3c;
+        }
+    

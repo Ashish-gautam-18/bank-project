@@ -1,0 +1,8 @@
+
+        .search-container { max-width: 500px; margin: 50px auto; font-family: Arial, sans-serif; }
+        .search-box { display: flex; gap: 10px; margin-bottom: 20px; }
+        .search-box input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        .btn-search { padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        .error { color: red; background-color: #f8d7da; padding: 10px; border-radius: 4px; margin-bottom: 15px; }
+        .result-card { border: 1px solid #ddd; padding: 20px; border-radius: 5px; background-color: #f9f9f9; }
+    

@@ -1,0 +1,127 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #0f2c59;
+            color: #fff;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .bank-logo {
+            width: 50px;
+            height: 50px;
+            background-color: #dac0a3;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            color: #0f2c59;
+            font-size: 1.2rem;
+        }
+        .logo-text h1 {
+            font-size: 1.5rem;
+        }
+        .logo-text p {
+            font-size: 0.8rem;
+            color: #dac0a3;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+        nav ul li a:hover, nav ul li a.active {
+            background-color: #dac0a3;
+            color: #0f2c59;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .page-title {
+            text-align: center;
+            color: #0f2c59;
+            margin-bottom: 40px;
+        }
+        .page-title h2 {
+            font-size: 2.3rem;
+            margin-bottom: 10px;
+        }
+        /* Rules Accordion-style layout */
+        .rules-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .rule-box {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 6px solid #0f2c59;
+        }
+        .rule-box.highlight {
+            border-left-color: #e07a5f;
+        }
+        .rule-box h3 {
+            color: #0f2c59;
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .rule-box ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        .rule-box ul li {
+            margin-bottom: 8px;
+        }
+        /* Banner block */
+        .info-banner {
+            background-color: #dac0a3;
+            color: #0f2c59;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .info-banner h4 {
+            font-size: 1.3rem;
+        }
+        footer {
+            background-color: #0f2c59;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+    
