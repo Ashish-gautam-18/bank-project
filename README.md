@@ -3,14 +3,20 @@
 This is a full-stack web application built using Spring Boot, JSP, and a MySQL database.
 
 ## 🛠️ Technologies Used
-Tech Stack: Spring Boot, JSP, Java, MySQL, MVC Architecture, Spring Security (BCrypt), HTML/CSS
+
+### Tech Stack: Spring Boot, JSP, Java, MySQL, MVC Architecture, Spring Security (BCrypt), HTML/CSS
+
 ● Core Banking Operations: Built a web application to handle Account Creation, Deposits, Withdrawals, and Account Closures 
 using MVC architecture.
+
 ● Ledger System: Designed a secure fund-transfer and balance-check module ensuring data consistency across transactions.
+
 ● Security Hardening: Implemented BCrypt password hashing, session-based admin authentication with route interceptors, 
 and resolved data-exposure risks in the admin panel.
+
 ● Code Quality: Refactored the codebase into a clean MVC structure with externalized CSS/JS, consistent naming conventions, 
 and centralized configuration.
+
 ● Live Demo: bank-project-jgu1.onrender.com
 
 ## 💻 Setup and Installation (How to Run on Local System)
@@ -32,7 +38,7 @@ CREATE TABLE IF NOT EXISTS accounts (
 
 --  Testing ke liye sample account data (Optional) 
 
---  INSERT INTO accounts (acc_number, name, password, amount, address, mobile) VALUES (1001001001, 'Rahul Kumar', 'securePass123', 5000.0, 'Delhi, India', 9876543210);
+--  INSERT INTO accounts (acc_number, name, password, amount, address, mobile) VALUES (10010010011234, 'Rahul Kumar', 'Password@123', 5000.0, 'Delhi, India', 9876543210);
  )
 
 
@@ -43,7 +49,7 @@ CREATE TABLE IF NOT EXISTS accounts (
 ### 2. How to Run the Project
 1. Import the project into your IDE (Eclipse / IntelliJ / STS).
 2. Right-click on the project and select `Run As -> Spring Boot App`.
-3. Open your browser and navigate to: `http://localhost:8080`
+3. Open your browser and navigate to: `http://localhost:9090`
 
 
 
