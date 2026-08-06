@@ -12,4 +12,5 @@ COPY --from=build /app/target/app.war app.war
 ENV PORT=8080
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "app.war"]
+# -Xmx256m se RAM 256MB tak limit ho jayegi aur app crash nahi hogi
+ENTRYPOINT ["java", "-Xmx256m", "-jar", "app.war"]
