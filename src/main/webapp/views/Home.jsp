@@ -5,63 +5,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SDFC Bank | Premium Digital Banking Portal</title>
+    <link rel="icon" href="data:,">
     <!-- Linking external CSS stylesheet assets cleanly using context mappings -->
 <!-- Embedded CSS for the Dynamic Navigation Elements -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Home.css">
 </head>
 <body>
 
-	<!-- 2. STICKY DYNAMIC NAVIGATION BAR (पूर्ण रूप से संरेखित और फिक्स किया गया) -->
-	<nav class="navbar" style="position: sticky; top: 0; z-index: 1000; display: flex; align-items: center; width: 100%; background: #00152b; padding: 12px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.4); border-bottom: 2px solid #0056b3; box-sizing: border-box;">
+	<!-- 2. STICKY DYNAMIC NAVIGATION BAR (Responsive Navbar) -->
+	<nav class="navbar">
 	    
-	    <!-- Left Side: Logo Area (बिना किसी एक्स्ट्रा स्पेस के) -->
-	    <div class="logo-area" style="display: flex; align-items: center; cursor: pointer; transition: transform 0.3s ease; flex-shrink: 0;" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-	        <!-- Main Corporate Image Asset -->
-	        <img src="${pageContext.request.contextPath}/images/logo.png" alt="SDFC" class="bank-logo" style="height: 35px; width: auto; object-fit: contain;" 
+	    <!-- Left Side: Logo Area -->
+	    <div class="logo-area">
+	        <img src="${pageContext.request.contextPath}/images/logo.png" alt="SDFC" class="bank-logo" 
 	             onerror="this.style.display='none'; document.getElementById('fallback-icon').style.display='inline-flex';">
 	        
-	        <!-- Backup Icon (Runs automatically if image path fails) -->
-	        <span id="fallback-icon" style="display: none; align-items: center; justify-content: center; width: 34px; height: 34px; background: linear-gradient(135deg, #00d2ff, #0056b3); color: white; font-size: 18px; border-radius: 8px; margin-right: 10px; box-shadow: 0 0 10px rgba(0, 210, 255, 0.6); animation: logoPulse 2s infinite alternate;">🛡️</span>
+	        <span id="fallback-icon">🛡️</span>
 	        
-	        <!-- Branding Text -->
-	        <span class="logo-text" style="color: #ffffff; font-weight: 800; font-size: 20px; letter-spacing: 1.5px; font-family: 'Poppins', sans-serif; text-shadow: 0 0 8px rgba(0, 210, 255, 0.3); margin-left: 8px;">
-	            SDFC <span style="color: #00d2ff;">BANK</span>
+	        <span class="logo-text">
+	            SDFC <span class="logo-highlight">BANK</span>
 	        </span>
 	    </div>
 
-	    <!-- Middle: Menu Links (एक सिंगल लाइन में परफेक्ट सीक्वेंस और गैप के साथ) -->
-	    <div class="menu" style="display: flex !important; flex-direction: row !important; align-items: center !important; flex-wrap: nowrap !important; gap: 15px !important; margin-left: 30px !important; margin-right: auto !important; width: auto !important; float: none !important;">
-	        <a href="/client-home" class="active" style="white-space: nowrap;">HOME</a>
-	        
-	        <!-- Premium Dynamic Admin Button -->
-			<a href="/admin-dashboard" class="admin-btn" style="white-space: nowrap;">
-			    <span class="admin-icon">⚙️</span> ADMIN DASHBOARD
-			</a>
-
-	        
-	        <a href="/account" style="white-space: nowrap;">NEW ACCOUNT</a>
-	        <a href="/balance" style="white-space: nowrap;">BALANCE</a>
-	        <a href="/depo" style="white-space: nowrap;">DEPOSIT</a>
-	        <a href="/withdrow" style="white-space: nowrap;">WITHDRAW</a>
-	        <a href="/Money" style="white-space: nowrap;">TRANSFER</a>
-	        <a href="/close" style="white-space: nowrap;">CLOSE A/C</a>
-	        <a href="${pageContext.request.contextPath}/views/AboutRules.jsp" style="white-space: nowrap;">ABOUT</a>
-	    </div>
-	     
-	    <!-- Right Side: Search Block (दाहिनी तरफ फिक्स) -->
-	    <div class="Search" style="margin-left: 20px; flex-shrink: 0;">
-	        <form action="${pageContext.request.contextPath}/findAccount" method="GET" style="display: flex; margin: 0;">
-	            <input class="srch" type="search" name="search_acc_number" placeholder="Enter Account..." required pattern="\d+" title="Numbers only" style="padding: 6px 12px; border: 1px solid #ced4da; border-radius: 4px 0 0 4px; outline: none; width: 160px;">
-	            <button type="submit" class="btn" style="padding: 6px 14px; background-color: #0056b3; color: white; border: 1px solid #0056b3; border-radius: 0 4px 4px 0; cursor: pointer; transition: background 0.3s; white-space: nowrap;">Search</button>
+	    <!-- Right Side: Search Block -->
+	    <div class="Search">
+	        <form action="${pageContext.request.contextPath}/findAccount" method="GET">
+	            <input class="srch" type="search" name="search_acc_number" placeholder="Enter Account..." required pattern="\d+" title="Numbers only">
+	            <button type="submit" class="btn">Search</button>
 	        </form>
+	    </div>
+
+	    <!-- Hamburger Menu Button for Mobile (☰) -->
+	    <button class="menu-toggle" onclick="toggleMenu()">
+	        <span></span>
+	        <span></span>
+	        <span></span>
+	    </button>
+
+	    <!-- Middle: Menu Links -->
+	    <div class="menu" id="navMenu">
+	        <a href="/client-home" class="active">HOME</a>
+	        <a href="/admin-dashboard" class="admin-btn">
+	            <span class="admin-icon">⚙️</span> ADMIN DASHBOARD
+	        </a>
+	        <a href="/account">NEW ACCOUNT</a>
+	        <a href="/balance">BALANCE</a>
+	        <a href="/depo">DEPOSIT</a>
+	        <a href="/withdrow">WITHDRAW</a>
+	        <a href="/Money">TRANSFER</a>
+	        <a href="/close">CLOSE A/C</a>
+	        <a href="${pageContext.request.contextPath}/views/AboutRules.jsp">ABOUT</a>
 	    </div>
 	</nav>
 
 
 
+
     <!-- 1. IMAGE SLIDER HERO BANNER (3 Pages / Slides - Moves below the Navigation Bar) -->
     <header class="slider-container">
-        <div class="slide active" style="background-image: linear-gradient(rgba(0, 26, 51, 0.75), rgba(0, 26, 51, 0.75)), url('${pageContext.request.contextPath}/images/slide1.jpg');">
+        <div class="slide active" style="background-image: linear-gradient(135deg, #051a37 0%, #0a2d5a 55%, #0a3d6b 100%);">
             <div class="slide-content">
                 <h1 class="animate-text">Welcome to SDFC Bank</h1>
                 <p class="animate-text delay-1">Secure, Real-Time Digital Banking Ecosystem.</p>
@@ -71,7 +73,7 @@
                 </div>
             </div>
         </div>
-        <div class="slide" style="background-image: linear-gradient(rgba(0, 40, 80, 0.8), rgba(0, 40, 80, 0.8)), url('${pageContext.request.contextPath}/images/slide2.jpg');">
+        <div class="slide" style="background-image: repeating-linear-gradient(135deg, #0a3346 0px, #0a3346 45px, #0f4a78 45px, #0f4a78 90px);">
             <div class="slide-content">
                 <h1>Next-Gen Fund Transfers</h1>
                 <p>Zero data inconsistency. Powered by automated safe ledger routing logic.</p>
@@ -80,7 +82,7 @@
                 </div>
             </div>
         </div>
-        <div class="slide" style="background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('${pageContext.request.contextPath}/images/slide3.jpg');">
+        <div class="slide" style="background-image: linear-gradient(160deg, #0a0c12 0%, #123028 60%, #0f3d33 100%);">
             <div class="slide-content">
                 <h1>Smart Wealth Management</h1>
                 <p>Instant inquiries, deep balance auditing, and hyper-responsive secure workflows.</p>
@@ -146,7 +148,8 @@
     <footer>
         <p>&copy; 2026 SDFC Bank Systems India. Built using Secure Spring Core Ledger Specifications. All Rights Reserved.</p>
     </footer>
-
+	
     <!-- Linking external Standalone JavaScript file assets securely -->
+	<script src="${pageContext.request.contextPath}/js/Home.js"></script>
 </body>
 </html>

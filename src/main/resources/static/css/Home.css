@@ -457,3 +457,208 @@ footer {
     font-size: 13px;
     border-top: 1px solid #002850;
 }
+/* --- RESPONSIVE NAVBAR CORE STYLES --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: #00152b;
+    padding: 12px 24px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    border-bottom: 2px solid #0056b3;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    order: 1; /* हमेशा पहले नंबर पर (बाईं तरफ) रहेगा */
+}
+
+.logo-area:hover {
+    transform: scale(1.03);
+}
+
+.bank-logo {
+    height: 35px;
+    width: auto;
+    object-fit: contain;
+}
+
+#fallback-icon {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: linear-gradient(135deg, #00d2ff, #0056b3);
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    margin-right: 10px;
+    box-shadow: 0 0 10px rgba(0, 210, 255, 0.6);
+}
+
+.logo-text {
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 0 8px rgba(0, 210, 255, 0.3);
+    margin-left: 8px;
+}
+
+.logo-highlight {
+    color: #00d2ff;
+}
+
+/* डेस्कटॉप पर मेनू को बीच में लाने और सही क्रम सेट करने के लिए */
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    margin-left: 30px !important;
+    margin-right: auto !important; /* सर्च बॉक्स को दाहिने कोने में धकेलने के लिए */
+    order: 2; /* डेस्कटॉप पर यह दूसरे नंबर यानी बीच में दिखेगा */
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+.menu a:hover, .menu a.active {
+    color: #00d2ff;
+}
+
+/* डेस्कटॉप पर सर्च बॉक्स को सबसे दाहिने कोने में रखने के लिए */
+.Search {
+    margin-left: 20px !important;
+    flex-shrink: 0;
+    order: 3; /* डेस्कटॉप पर यह तीसरे नंबर यानी सबसे आखिरी में दिखेगा */
+}
+
+.Search form {
+    display: flex;
+    margin: 0;
+}
+
+.srch {
+    padding: 6px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+    width: 160px;
+}
+
+.Search .btn {
+    padding: 6px 14px;
+    background-color: #0056b3;
+    color: white;
+    border: 1px solid #0056b3;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+    white-space: nowrap;
+}
+
+/* मोबाइल मेनू टॉगल बटन */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+    background: none;
+    border: none;
+    order: 4; /* मोबाइल बटन को दाहिने कोने पर रखने के लिए */
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* 📱 मीडिया क्वेरी: टैबलेट और मोबाइल के लिए (992px से नीचे) */
+@media (max-width: 992px) {
+    .menu-toggle {
+        display: flex;
+    }
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        order: 4; /* मोबाइल पर मेनू सबसे नीचे खुलेगा */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        margin-top: 15px;
+        gap: 10px;
+        background: #001c3a;
+        padding: 15px;
+        border-radius: 8px;
+    }
+    .menu.show {
+        display: flex;
+    }
+    .menu a {
+        width: 100%;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .Search {
+        margin-left: auto !important;
+        order: 2; /* मोबाइल/टैबलेट पर सर्च बॉक्स लोगो के बाद दिखेगा */
+    }
+    .menu-toggle {
+        order: 3; /* मोबाइल/टैबलेट पर तीन लाइन वाला बटन सर्च बॉक्स के बाद कोने में दिखेगा */
+    }
+}
+
+/* छोटे स्क्रीन फोन के लिए (576px से नीचे) */
+@media (max-width: 576px) {
+    .navbar {
+        padding: 12px 15px;
+    }
+    .logo-text {
+        font-size: 16px;
+    }
+    .Search {
+        width: 100%;
+        margin-left: 0 !important;
+        margin-top: 10px;
+        order: 3; /* छोटे फोन पर सर्च बॉक्स पूरी चौड़ाई में नीचे आ जाएगा */
+    }
+    .Search form {
+        width: 100%;
+    }
+    .srch {
+        width: 100%;
+    }
+    .menu-toggle {
+        order: 2; /* छोटे फोन पर तीन लाइन वाला बटन लोगो के ठीक बगल में कोने में रहेगा */
+    }
+    .menu {
+        order: 4; /* मेनू हमेशा सबसे नीचे रहेगा */
+    }
+}
+
+
+

@@ -9,11 +9,9 @@ function showSlide(index) {
     else if (index < 0) currentSlideIndex = slides.length - 1;
     else currentSlideIndex = index;
 
-    // Resetting states across components
     slides.forEach(slide => slide.classList.remove('active'));
     dots.forEach(dot => dot.classList.remove('active'));
 
-    // Activating target slide layout window
     slides[currentSlideIndex].classList.add('active');
     dots[currentSlideIndex].classList.add('active');
 }
@@ -33,32 +31,57 @@ function currentSlide(index) {
 function startAutoSlide() {
     slideInterval = setInterval(() => {
         showSlide(currentSlideIndex + 1);
-    }, 3000); // Transitions slide variations every 3 sec
+    }, 3000);
 }
 
 // --- Interactive Popup Engine Control Sequences ---
 function openNoticeModal() {
-    document.getElementById('noticeModal').classList.add('active');
+    const modal = document.getElementById('noticeModal');
+    if (!modal) {
+        console.warn("noticeModal element not found in the page.");
+        return;
+    }
+    modal.classList.add('active');
 }
 
 function closeNoticeModal() {
-    document.getElementById('noticeModal').classList.remove('active');
+    const modal = document.getElementById('noticeModal');
+    if (modal) {
+        modal.classList.remove('active');
+    }
 }
 
 // --- Initialize Components on Document Ready ---
 document.addEventListener("DOMContentLoaded", () => {
-    startAutoSlide();
+    if (slides.length > 0) {
+        startAutoSlide();
+    }
 
-    // Show the notice popup automatically only ONCE per browser session.
-    // If the user already saw it (this tab/session), don't auto-show it again
-    // on page reload or re-visit. The "View Bank Notices" button still opens
-    // it manually anytime, regardless of this check.
-    const alreadyShown = sessionStorage.getItem("noticeShown");
+    let alreadyShown = false;
+    try {
+        alreadyShown = sessionStorage.getItem("noticeShown") === "true";
+    } catch (e) {
+        console.warn("sessionStorage not accessible.");
+    }
 
     if (!alreadyShown) {
         setTimeout(() => {
             openNoticeModal();
-            sessionStorage.setItem("noticeShown", "true");
+            try {
+                sessionStorage.setItem("noticeShown", "true");
+            } catch (e) {
+                // ignore
+            }
         }, 1500);
     }
 });
+
+// --- Mobile Responsive Navbar Toggle Logic ---
+function toggleMenu() {
+    const menu = document.getElementById("navMenu");
+    if (menu) {
+        menu.classList.toggle("show");
+    } else {
+        console.warn("navMenu element not found in the page.");
+    }
+}
