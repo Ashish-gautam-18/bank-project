@@ -48,9 +48,17 @@ function closeNoticeModal() {
 // --- Initialize Components on Document Ready ---
 document.addEventListener("DOMContentLoaded", () => {
     startAutoSlide();
-    
-    // Automatically triggers the banking warning notice popup window 1.5 seconds after load
-    setTimeout(() => {
-        openNoticeModal();
-    }, 1500);
+
+    // Show the notice popup automatically only ONCE per browser session.
+    // If the user already saw it (this tab/session), don't auto-show it again
+    // on page reload or re-visit. The "View Bank Notices" button still opens
+    // it manually anytime, regardless of this check.
+    const alreadyShown = sessionStorage.getItem("noticeShown");
+
+    if (!alreadyShown) {
+        setTimeout(() => {
+            openNoticeModal();
+            sessionStorage.setItem("noticeShown", "true");
+        }, 1500);
+    }
 });
