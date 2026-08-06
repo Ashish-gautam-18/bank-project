@@ -3,10 +3,15 @@
 This is a full-stack web application built using Spring Boot, JSP, and a MySQL database.
 
 ## 🛠️ Technologies Used
-- **Backend:** Spring Boot
-- **Frontend:** JSP, CSS, JavaScript
-- **Database:** MySQL
-- **Build Tool:** Maven
+Tech Stack: Spring Boot, JSP, Java, MySQL, MVC Architecture, Spring Security (BCrypt), HTML/CSS
+● Core Banking Operations: Built a web application to handle Account Creation, Deposits, Withdrawals, and Account Closures 
+using MVC architecture.
+● Ledger System: Designed a secure fund-transfer and balance-check module ensuring data consistency across transactions.
+● Security Hardening: Implemented BCrypt password hashing, session-based admin authentication with route interceptors, 
+and resolved data-exposure risks in the admin panel.
+● Code Quality: Refactored the codebase into a clean MVC structure with externalized CSS/JS, consistent naming conventions, 
+and centralized configuration.
+● Live Demo: bank-project-jgu1.onrender.com
 
 ## 💻 Setup and Installation (How to Run on Local System)
 
