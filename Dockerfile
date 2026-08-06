@@ -4,8 +4,8 @@ WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
-# Run Stage
-FROM openjdk:17-jdk-slim
+# Run Stage (Updated Base Image)
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /app/target/app.war app.war
 
