@@ -4,12 +4,11 @@ WORKDIR /app
 COPY . .
 RUN mvn clean package -DskipTests
 
-# Run Stage (Updated Base Image)
+# Run Stage
 FROM eclipse-temurin:17-jre
 WORKDIR /app
 COPY --from=build /app/target/app.war app.war
 
-# Dynamic Port Binding
 ENV PORT=8080
 EXPOSE 8080
 
