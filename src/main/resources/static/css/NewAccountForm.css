@@ -1,176 +1,256 @@
+/* =======================================================
+   SDFC BANK - CORE ACCOUNT FORM LAYOUT STYLES
+   ======================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+/* Fixed Background Image Overlay */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+                      url('/images/logo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
 
-        /* Fixed Background Image Overlay */
-        .background-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
-                              url('/images/logo.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: -1;
-        }
+/* Base Desktop Viewport Configuration */
+html, body {
+    height: 100%;
+    overflow-x: hidden; /* Prevents unwanted sideways scrolling */
+}
 
-        /* Fixed Viewport Configuration to block scrolling */
-        html, body {
-            height: 100%;
-            overflow: hidden; /* Disables page scrolling */
-        }
+/* Navbar Layout */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(0, 40, 80, 0.95);
+    border-bottom: 2px solid #0056b3;
+    min-height: 10vh;
+}
 
-        /* Navbar Layout */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            background: rgba(0, 40, 80, 0.95);
-            border-bottom: 2px solid #0056b3;
-            height: 10vh;
-        }
+.logo {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
 
-        .logo {
-            color: #ffffff;
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
+.menu a {
+    color: #bdc3c7;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
 
-        .menu a {
-            color: #bdc3c7;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+.menu a:hover, .menu a.active {
+    color: #00d2ff;
+}
 
-        .menu a:hover, .menu a.active {
-            color: #00d2ff;
-        }
+/* Form Wrapper Layout */
+.form-wrapper {
+    min-height: 90vh; /* Changed from height to min-height to allow downward expansion */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 10px;
+}
 
-        /* Form Wrapper Layout */
-        .form-wrapper {
-            height: 90vh; /* Fills remaining screen perfectly */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-        }
+/* Transparent Glassmorphism Container */
+.form-container {
+    background: rgba(255, 255, 255, 0.12); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blurs the background image underneath */
+    -webkit-backdrop-filter: blur(10px);
+    padding: 25px 35px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 650px; /* Widened to fit columns */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
 
-        /* Transparent Glassmorphism Container */
-        .form-container {
-            background: rgba(255, 255, 255, 0.12); /* Semi-transparent white */
-            backdrop-filter: blur(10px); /* Blurs the background image underneath */
-            -webkit-backdrop-filter: blur(10px);
-            padding: 25px 35px;
-            border-radius: 12px;
-            width: 100%;
-            max-width: 650px; /* Widened to fit columns */
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
+.form-container h2 {
+    color: #00d2ff; /* Bright blue for visibility against dark backgrounds */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
 
-        .form-container h2 {
-            color: #00d2ff; /* Changed to bright blue for visibility against dark backgrounds */
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
+/* Two-Column Grid Setup */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Splits fields into 2 equal columns */
+    gap: 12px 20px; /* Spacing to avoid overflows */
+}
 
-        /* Two-Column Grid Setup */
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr; /* Splits fields into 2 equal columns */
-            gap: 12px 20px; /* Tighter spacing to avoid overflows */
-        }
+/* Spans the address text area across both columns */
+.full-width {
+    grid-column: span 2;
+}
 
-        /* Spans the address text area across both columns */
-        .full-width {
-            grid-column: span 2;
-        }
+.input-group {
+    text-align: left;
+}
 
-        .input-group {
-            text-align: left;
-        }
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #ffffff; /* Crisp white labels */
+    margin-bottom: 5px;
+}
 
-        .input-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            color: #ffffff; /* Crisp white labels */
-            margin-bottom: 5px;
-        }
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.9); /* Easy to read text inputs */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: 0.3s;
+}
 
-        .input-group input, .input-group textarea {
-            width: 100%;
-            padding: 8px 12px;
-            background: rgba(255, 255, 255, 0.9); /* Easy to read text inputs */
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-            outline: none;
-            transition: 0.3s;
-        }
+.input-group input:focus, .input-group textarea:focus {
+    border-color: #00d2ff;
+    box-shadow: 0 0 5px rgba(0, 210, 255, 0.5);
+}
 
-        .input-group input:focus, .input-group textarea:focus {
-            border-color: #00d2ff;
-            box-shadow: 0 0 5px rgba(0, 210, 255, 0.5);
-        }
+.input-group textarea {
+    resize: none;
+    height: 45px; /* Shorter textarea height */
+}
 
-        .input-group textarea {
-            resize: none;
-            height: 45px; /* Shorter textarea height */
-        }
+/* Action Buttons Row */
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
 
-        /* Action Buttons Row */
-        .button-group {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
+.btn-submit {
+    flex: 2;
+    padding: 10px;
+    background: #00d2ff;
+    color: #002850;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .btn-submit {
-            flex: 2;
-            padding: 10px;
-            background: #00d2ff;
-            color: #002850;
-            border: none;
-            border-radius: 5px;
-            font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.btn-submit:hover {
+    background: #ffffff;
+    color: #002850;
+}
 
-        .btn-submit:hover {
-            background: #ffffff;
-            color: #002850;
-        }
+.btn-clear {
+    flex: 1;
+    padding: 10px;
+    background: rgba(231, 76, 60, 0.8);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-        .btn-clear {
-            flex: 1;
-            padding: 10px;
-            background: rgba(231, 76, 60, 0.8);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 15px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.btn-clear:hover {
+    background: #e74c3c;
+}
 
-        .btn-clear:hover {
-            background: #e74c3c;
-        }
+/* =======================================================
+   STRICT MOBILE RESPONSIVE OVERRIDES
+   ======================================================= */
+@media (max-width: 768px) {
     
+    /* Enables scrolling on mobile viewports */
+    html, body {
+        overflow-y: auto !important;
+        height: auto !important;
+    }
+
+    /* Allows the wrapper to expand downward naturally for long content */
+    .form-wrapper {
+        height: auto !important;
+        min-height: calc(100vh - 10vh) !important;
+        padding: 30px 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Standardizes container properties for small screens */
+    .form-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 25px 20px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Destroys multi-column grids and creates a single vertical alignment linear stream */
+    .form-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 16px !important;
+        width: 100% !important;
+    }
+
+    /* Standardizes field elements width to consume the screen space */
+    .input-group {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Increases tracking input box area for touch targets */
+    .input-group input, 
+    .input-group textarea {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 12px !important;
+        font-size: 16px !important;
+    }
+
+    .input-group textarea {
+        height: 70px !important; /* Slightly taller for text area editing fields on mobile */
+    }
+
+    /* Rearranges control actions to stack vertically (Submit button on top, Clear button below) */
+    .button-group {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
+        margin-top: 25px !important;
+    }
+
+    /* Expands both actions to full width tracking columns */
+    .btn-submit, .btn-clear {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 14px !important;
+        box-sizing: border-box !important;
+        display: block !important;
+        flex: none !important;
+    }
+}

@@ -1,13 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Essential responsive viewport configuration tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About SDFC Bank - Rules & Compliance</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/AboutRules.css">
+    
+    <!-- Link external base presentation stylesheet asset -->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Home.css">
+    
+    <!-- Original stylesheet containing responsive overrides at the bottom -->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/AboutRules.css">
 </head>
 <body>
 
+    <!-- Header containing system sub-navigation menus -->
     <header>
         <div class="logo-container">
             <div class="bank-logo">SDFC</div>
@@ -16,63 +24,51 @@
                 <p>Secure. Digital. Future. Clean.</p>
             </div>
         </div>
-		<nav>
-				    <ul>
-						<li><a href="/client-home">Home</a></li>
-				        <li><a href="${pageContext.request.contextPath}/views/AboutStory.jsp">Our Story</a></li>
-				        <li><a href="${pageContext.request.contextPath}/views/AboutGovernance.jsp">Governance</a></li>
-				        <li><a href="${pageContext.request.contextPath}/views/AboutRules.jsp">Rules & Compliance</a></li>
-				    </ul>
-				</nav>
+        <nav>
+            <ul>
+                <li><a href="/client-home">Home</a></li>
+                <li><a href="${pageContext.request.contextPath}/views/AboutStory.jsp">Our Story</a></li>
+                <li><a href="${pageContext.request.contextPath}/views/AboutGovernance.jsp">Governance</a></li>
+                <li><a href="${pageContext.request.contextPath}/views/AboutRules.jsp" class="active">Rules & Compliance</a></li>
+            </ul>
+        </nav>
     </header>
 
+    <!-- Main dynamic data layout container segment -->
     <div class="container">
         <div class="page-title">
             <h2>Rules & Regulatory Compliance</h2>
-            <p>Our strict operating mandates guarantee system security and protect depositor wealth.</p>
+            <p>Strict operating mandates guarantee transaction safety and protect depositor wealth.</p>
         </div>
 
+        <!-- Compliance guidelines display wrapper -->
         <div class="rules-container">
-            <div class="rule-box">
-                <h3>1. Know Your Customer (KYC) Mandates</h3>
-                <p>In accordance with central banking provisions, all active client profiles must undergo biometric verification or secure document screening via our secure app channel.</p>
-                <ul>
-                    <li>Primary government identity cards must be updated every 2 years.</li>
-                    <li>Corporate entities must provide validated articles of incorporation.</li>
-                </ul>
-            </div>
-
             <div class="rule-box highlight">
-                <h3>2. Anti-Money Laundering (AML) Protocols</h3>
-                <p>SDFC Bank deploys real-time machine learning monitoring filters to automatically tag, hold, and review flagged structural financial anomalies.</p>
-                <ul>
-                    <li>All individual cash operations exceeding $10,000 generate systematic tax file records automatically.</li>
-                    <li>Cross-border clearings undergo deep routing scrutiny before final settlements.</li>
-                </ul>
+                <h3><span>📋</span> Know Your Customer (KYC) Mandates</h3>
+                <p>In accordance with central banking provisions, all active client profiles require verified core identification documents prior to transactional routing clearance.</p>
             </div>
 
             <div class="rule-box">
-                <h3>3. Digital Security & Privacy Rules</h3>
-                <p>Customer accounts fall under strict encrypted firewall policies. Employees are systematically prohibited from querying clean-text consumer passkeys.</p>
-                <ul>
-                    <li>Multi-Factor Authentication (MFA) is mandatory across all active mobile logging profiles.</li>
-                    <li>We never contact customers asking for One-Time Passwords (OTPs) via text or outbound phone centers.</li>
-                </ul>
+                <h3><span>🔒</span> Anti-Money Laundering Framework</h3>
+                <p>Automated rolling ledger audit checks evaluate ledger balances to prevent suspicious capital movements or transactional inconsistency profiles.</p>
             </div>
         </div>
 
+        <!-- Informational banner accent panel -->
         <div class="info-banner">
             <div>
-                <h4>Need to report fraudulent account activity?</h4>
-                <p>Our rapid action security network isolates system leaks immediately.</p>
+                <h4>Have compliance inquiries?</h4>
+                <p>Our dedicated regulatory desk checks ledger compliance records 24/7.</p>
             </div>
-            <strong style="font-size: 1.2rem;">Call: 1800-SDFC-SAFE</strong>
         </div>
     </div>
 
+    <!-- Administrative tracking footer node -->
     <footer>
         <p>&copy; 2026 SDFC Bank Ltd. All Rights Reserved. Conceptualized for Project Delivery.</p>
     </footer>
 
+    <!-- Main dynamic JavaScript module reference -->
+    <script src="${pageContext.request.contextPath}/js/Home.js"></script>
 </body>
 </html>

@@ -3,22 +3,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Essential responsive viewport configuration tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SDFC Bank</title>
-<!-- Ultra Dynamic Styling Enhancement Block -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/AdminDashboard.css">
+    <title>SDFC Bank | Admin Operations Dashboard</title>
+    
+    <!-- Link external base presentation stylesheet asset -->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Home.css">
+    
+    <!-- Central administrative style layer containing responsive grid logic adjustments -->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/AdminDashboard.css">
 </head>
 <body>
 
+    <!-- Mobile Top Navigation Strip containing hamburger switch trigger -->
+    <div class="admin-mobile-nav">
+        <span style="font-weight: 800; letter-spacing: 1px;">SDFC ADMIN</span>
+        <button class="admin-hamburger" onclick="toggleAdminSidebar()">☰</button>
+    </div>
+
     <!-- Admin Control Panel Navigation Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="adminSidebar">
         <div class="sidebar-brand">SDFC BANK</div>
         <ul class="sidebar-menu">
             <li><a href="/" class="active">📊 Overview Monitor</a></li>
-            <li><a href="#" onclick="togglePanel('deposit-panel')">💰 Quick Deposit</a></li>
-            <li><a href="#" onclick="togglePanel('transfer-panel')">🔄 Transfer Funds</a></li>
+            <li><a href="#" onclick="togglePanel('deposit-panel'); closeAdminSidebar();">💰 Quick Deposit</a></li>
+            <li><a href="#" onclick="togglePanel('transfer-panel'); closeAdminSidebar();">🔄 Transfer Funds</a></li>
             
-            <!-- Redirection trigger matching your request to jump over to client home layout -->
             <li>
                 <a href="/client-home" class="exit-link">
                     <span class="home-icon">🏠</span> Client Home Portal
@@ -131,6 +141,23 @@
         </section>
     </main>
 
-<script src="${pageContext.request.contextPath}/js/AdminDashboard.js"></script>
+    <!-- Embedded micro script tracking mechanisms for managing structural sidebar sliding motions -->
+    <script>
+        function toggleAdminSidebar() {
+            var sidebar = document.getElementById('adminSidebar');
+            if (sidebar) {
+                sidebar.classList.toggle('open');
+            }
+        }
+        function closeAdminSidebar() {
+            var sidebar = document.getElementById('adminSidebar');
+            if (sidebar) {
+                sidebar.classList.remove('open');
+            }
+        }
+    </script>
+
+    <!-- Project core interactive processing module script file reference -->
+    <script src="${pageContext.request.contextPath}/js/AdminDashboard.js"></script>
 </body>
 </html>

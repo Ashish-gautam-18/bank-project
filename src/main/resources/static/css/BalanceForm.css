@@ -1,23 +1,241 @@
+/* =======================================================
+   SDFC BANK - CORE BALANCE INQUIRY LAYOUT STYLES
+   ======================================================= */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        .background-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(15, 5, 30, 0.8), rgba(15, 5, 30, 0.8)), url('/images/logo.png'); background-size: cover; background-position: center; background-repeat: no-repeat; z-index: -1; }
-        html, body { height: 100%; overflow: hidden; }
-        .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 50px; background: rgba(15, 5, 30, 0.95); border-bottom: 2px solid #8e44ad; height: 10vh; }
-        .logo { color: #ffffff; font-size: 24px; font-weight: bold; letter-spacing: 1px; }
-        .menu a { color: #bdc3c7; text-decoration: none; margin: 0 15px; font-size: 14px; font-weight: 600; transition: 0.3s; }
-        .menu a:hover, .menu a.active { color: #bb86fc; }
-        .form-wrapper { height: 90vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
-        .form-container { background: rgba(255, 255, 255, 0.07); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 40px; border-radius: 16px; width: 100%; max-width: 450px; box-shadow: 0 8px 32px rgba(142, 68, 173, 0.25); border: 1px solid rgba(255, 255, 255, 0.15); text-align: center; animation: cardPopIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
-        .form-container h2 { color: #bb86fc; margin-bottom: 8px; font-size: 26px; }
-        .form-container p { color: #b3b3b3; font-size: 13px; margin-bottom: 20px; }
-        .input-group { margin-bottom: 22px; text-align: left; }
-        .input-group label { display: block; font-size: 13px; font-weight: 600; color: #ffffff; margin-bottom: 6px; letter-spacing: 0.5px; }
-        .input-group input { width: 100%; padding: 12px; background: rgba(255, 255, 255, 0.95); border: 2px solid transparent; border-radius: 6px; font-size: 14px; outline: none; transition: 0.3s; color: #1a1a1a; }
-        .input-group input:focus { border-color: #bb86fc; box-shadow: 0 0 8px rgba(187, 134, 252, 0.5); }
-        .button-group { display: flex; gap: 15px; margin-top: 10px; }
-        .btn-submit { flex: 2; padding: 12px; background: #8e44ad; color: white; border: none; border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4); }
-        .btn-submit:hover { background: #bb86fc; color: #15051e; transform: translateY(-2px); }
-        .btn-clear { flex: 1; padding: 12px; background: transparent; color: #ffffff; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 6px; font-size: 15px; font-weight: bold; cursor: pointer; transition: 0.3s; }
-        .btn-clear:hover { background: rgba(255, 255, 255, 0.1); border-color: #ffffff; }
-        @keyframes cardPopIn { from { opacity: 0; transform: scale(0.8) translateY(30px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+/* Fixed Background Image Overlay Configuration */
+.background-overlay { 
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-image: linear-gradient(rgba(15, 5, 30, 0.8), rgba(15, 5, 30, 0.8)), url('/images/logo.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    z-index: -1; 
+}
+
+/* Base Desktop Viewport Specifications */
+html, body { 
+    height: 100%; 
+    overflow-x: hidden; /* Prevents horizontal layout overflows */
+}
+
+/* Navbar Layout Dimensions */
+.navbar { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 50px; 
+    background: rgba(15, 5, 30, 0.95); 
+    border-bottom: 2px solid #8e44ad; 
+    min-height: 10vh; 
+}
+
+.logo { 
+    color: #ffffff; 
+    font-size: 24px; 
+    font-weight: bold; 
+    letter-spacing: 1px; 
+}
+
+.menu a { 
+    color: #bdc3c7; 
+    text-decoration: none; 
+    margin: 0 15px; 
+    font-size: 14px; 
+    font-weight: 600; 
+    transition: 0.3s; 
+}
+
+.menu a:hover, .menu a.active { 
+    color: #bb86fc; 
+}
+
+/* Centralized Form Wrapping Alignment Boundary */
+.form-wrapper { 
+    min-height: 90vh; /* Scaled from height to min-height to permit downward overflow expansion */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px 10px; 
+}
+
+/* Transparent Card Panel Structural Rule Definition */
+.form-container { 
+    background: rgba(255, 255, 255, 0.07); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
+    padding: 40px; 
+    border-radius: 16px; 
+    width: 100%; 
+    max-width: 450px; 
+    box-shadow: 0 8px 32px rgba(142, 68, 173, 0.25); 
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    text-align: center; 
+    animation: cardPopIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; 
+}
+
+.form-container h2 { 
+    color: #bb86fc; 
+    margin-bottom: 8px; 
+    font-size: 26px; 
+}
+
+.form-container p { 
+    color: #b3b3b3; 
+    font-size: 13px; 
+    margin-bottom: 20px; 
+}
+
+/* Form Layout Alignment Clusters */
+.input-group { 
+    margin-bottom: 22px; 
+    text-align: left; 
+}
+
+.input-group label { 
+    display: block; 
+    font-size: 13px; 
+    font-weight: 600; 
+    color: #ffffff; 
+    margin-bottom: 6px; 
+    letter-spacing: 0.5px; 
+}
+
+.input-group input { 
+    width: 100%; 
+    padding: 12px; 
+    background: rgba(255, 255, 255, 0.95); 
+    border: 2px solid transparent; 
+    border-radius: 6px; 
+    font-size: 14px; 
+    outline: none; 
+    transition: 0.3s; 
+    color: #1a1a1a; 
+}
+
+.input-group input:focus { 
+    border-color: #bb86fc; 
+    box-shadow: 0 0 8px rgba(187, 134, 252, 0.5); 
+}
+
+/* Control Trigger Row Layout Group */
+.button-group { 
+    display: flex; 
+    gap: 15px; 
+    margin-top: 10px; 
+}
+
+.btn-submit { 
+    flex: 2; 
+    padding: 12px; 
+    background: #8e44ad; 
+    color: white; 
+    border: none; 
+    border-radius: 6px; 
+    font-size: 15px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: 0.3s; 
+    box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4); 
+}
+
+.btn-submit:hover { 
+    background: #bb86fc; 
+    color: #15051e; 
+    transform: translateY(-2px); 
+}
+
+.btn-clear { 
+    flex: 1; 
+    padding: 12px; 
+    background: transparent; 
+    color: #ffffff; 
+    border: 2px solid rgba(255, 255, 255, 0.3); 
+    border-radius: 6px; 
+    font-size: 15px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+
+.btn-clear:hover { 
+    background: rgba(255, 255, 255, 0.1); 
+    border-color: #ffffff; 
+}
+
+@keyframes cardPopIn { 
+    from { opacity: 0; transform: scale(0.8) translateY(30px); } 
+    to { opacity: 1; transform: scale(1) translateY(0); } 
+}
+
+/* =======================================================
+   STRICT MOBILE RESPONSIVE MEDIA OVERRIDES
+   ======================================================= */
+@media (max-width: 768px) {
     
+    /* Destroys absolute window lock and permits flexible downward user scrolling */
+    html, body {
+        overflow-y: auto !important;
+        height: auto !important;
+    }
+
+    /* Permits natural vertical overflow boundary adjustments */
+    .form-wrapper {
+        height: auto !important;
+        min-height: calc(100vh - 10vh) !important;
+        padding: 30px 10px !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Scales data entry container layout dynamically down to mobile grid margins */
+    .form-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 30px 20px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+    }
+
+    /* Extends the text control inputs safely across small handheld viewports */
+    .input-group {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        box-sizing: border-box !important;
+    }
+
+    .input-group input {
+        width: 100% !important;
+        padding: 14px 12px !important;
+        font-size: 16px !important; /* Prevents hardware auto-magnification loops */
+    }
+
+    /* Re-stacks control processing targets linearly onto distinct sequential rows */
+    .button-group {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 12px !important;
+        width: 100% !important;
+        margin-top: 20px !important;
+    }
+
+    /* Normalizes control elements to maximize clean tactile surface interactions */
+    .btn-submit, .btn-clear {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 14px !important;
+        box-sizing: border-box !important;
+        display: block !important;
+        flex: none !important;
+    }
+}

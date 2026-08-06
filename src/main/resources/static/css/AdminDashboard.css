@@ -1,49 +1,13 @@
-
-        /* Target exclusive exit-link class safely */
-        .sidebar-menu li .exit-link {
-            display: inline-flex !important;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 16px !important;
-            margin: 15px 12px !important;
-            background: linear-gradient(135deg, #0d251c, #004d26) !important;
-            color: #00e676 !important;
-            font-weight: bold !important;
-            border: 1px solid rgba(0, 230, 118, 0.4) !important;
-            border-radius: 30px !important;
-            text-decoration: none !important;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-            
-            /* Custom spring-bounce curve animation timing */
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
-        }
-
-        /* Extreme hover behavior: pops out, transforms gradient, and glows */
-        .sidebar-menu li .exit-link:hover {
-            transform: scale(1.12) translateY(-3px) !important;
-            background: linear-gradient(135deg, #00e676, #007a3d) !important;
-            color: #ffffff !important;
-            border-color: #ffffff !important;
-            box-shadow: 0 8px 20px rgba(0, 230, 118, 0.5), 0 0 30px rgba(0, 230, 118, 0.2) !important;
-        }
-
-        /* Isolate the home icon inside the link wrapper */
-        .home-icon {
-            display: inline-block;
-            transition: transform 0.4s ease-in-out;
-        }
-
-        /* Subtle animated jump and rotate effect for the home element */
-        .sidebar-menu li .exit-link:hover .home-icon {
-            transform: translateY(-4px) scale(1.2) rotate(-5deg);
-        }
-    /* ---- Merged from old admin-style.css ---- */
+/* =======================================================
+   SDFC BANK - CORE ADMINISTRATIVE DASHBOARD CORE STYLES
+   ======================================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', system-ui, sans-serif;
 }
+
 body {
     display: flex;
     background-color: #f5f7fa;
@@ -51,6 +15,8 @@ body {
     color: #1e293b;
     overflow-x: hidden;
 }
+
+/* Sidebar Layout Architecture */
 .sidebar {
     width: 260px;
     background: #001a33;
@@ -62,8 +28,10 @@ body {
     left: 0;
     top: 0;
     box-shadow: 3px 0 15px rgba(0,0,0,0.1);
-    z-index: 100;
+    z-index: 1001;
+    transition: transform 0.3s ease-in-out;
 }
+
 .sidebar-brand {
     font-size: 22px;
     font-weight: 800;
@@ -73,10 +41,12 @@ body {
     border-bottom: 3px solid #0056b3;
     letter-spacing: 1.5px;
 }
+
 .sidebar-menu {
     list-style: none;
     padding-top: 10px;
 }
+
 .sidebar-menu li a {
     display: block;
     color: #cbd5e1;
@@ -87,24 +57,56 @@ body {
     transition: all 0.3s ease;
     border-left: 4px solid transparent;
 }
+
 .sidebar-menu li a:hover, .sidebar-menu li a.active {
     color: #00d2ff;
     background: rgba(0, 40, 80, 0.5);
     border-left-color: #00d2ff;
 }
-.exit-link {
-    color: #f87171 !important;
-    margin-top: 20px;
+
+/* Target exclusive exit-link class safely */
+.sidebar-menu li .exit-link {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px !important;
+    margin: 15px 12px !important;
+    background: linear-gradient(135deg, #0d251c, #004d26) !important;
+    color: #00e676 !important;
+    font-weight: bold !important;
+    border: 1px solid rgba(0, 230, 118, 0.4) !important;
+    border-radius: 30px !important;
+    text-decoration: none !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
 }
-.exit-link:hover {
-    background: rgba(220, 38, 38, 0.2) !important;
+
+.sidebar-menu li .exit-link:hover {
+    transform: scale(1.05) translateY(-2px) !important;
+    background: linear-gradient(135deg, #00e676, #007a3d) !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+    box-shadow: 0 8px 20px rgba(0, 230, 118, 0.5) !important;
 }
+
+.home-icon {
+    display: inline-block;
+    transition: transform 0.4s ease-in-out;
+}
+
+.sidebar-menu li .exit-link:hover .home-icon {
+    transform: translateY(-2px) scale(1.1);
+}
+
+/* Workspace Frame Distribution Layout */
 .main-workspace {
     margin-left: 260px;
     flex-grow: 1;
     padding: 40px;
     width: calc(100% - 260px);
+    transition: margin-left 0.3s ease-in-out, width 0.3s ease-in-out;
 }
+
 .workspace-header {
     display: flex;
     justify-content: space-between;
@@ -112,12 +114,15 @@ body {
     border-bottom: 2px solid #e2e8f0;
     padding-bottom: 15px;
     margin-bottom: 35px;
+    gap: 15px;
 }
+
 .workspace-header h2 {
     color: #002850;
     font-size: 26px;
     font-weight: 700;
 }
+
 .connection-pill {
     font-size: 12px;
     font-weight: 700;
@@ -125,13 +130,40 @@ body {
     color: #15803d;
     padding: 6px 14px;
     border-radius: 20px;
+    white-space: nowrap;
 }
+
+/* Mobile Sidebar Toggle Button Trigger */
+.admin-mobile-nav {
+    display: none;
+    background: #001a33;
+    color: white;
+    padding: 15px 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1002;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.admin-hamburger {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Metrics Cards Layer */
 .metrics-grid {
     display: flex;
     gap: 25px;
     margin-bottom: 35px;
     flex-wrap: wrap;
 }
+
 .metric-card {
     background: #ffffff;
     flex: 1;
@@ -141,7 +173,9 @@ body {
     box-shadow: 0 4px 12px rgba(0,0,0,0.03);
     border-bottom: 4px solid #002850;
 }
+
 .metric-card.accent-card { border-bottom-color: #00d2ff; }
+
 .metric-card h3 {
     font-size: 13px;
     color: #64748b;
@@ -149,11 +183,14 @@ body {
     margin-bottom: 10px;
     letter-spacing: 0.5px;
 }
+
 .metric-value {
     font-size: 28px;
     font-weight: 700;
     color: #0f172a;
 }
+
+/* Operational Sliding Input Panels Layout */
 .toggle-panel {
     background: #ffffff;
     padding: 25px;
@@ -163,27 +200,32 @@ body {
     border-left: 5px solid #00d2ff;
     animation: fadeInForm 0.4s ease-out forwards;
 }
+
 @keyframes fadeInForm {
     from { opacity: 0; transform: translateY(-10px); }
     to { opacity: 1; transform: translateY(0); }
 }
+
 .toggle-panel h3 {
     margin-bottom: 15px;
     color: #002850;
     font-size: 18px;
 }
+
 .banking-form { display: flex; gap: 15px; flex-wrap: wrap; }
+
 .banking-form input {
     flex: 1;
     min-width: 220px;
-    padding: 10px 14px;
+    padding: 12px 14px;
     border: 1px solid #cbd5e1;
     border-radius: 4px;
     outline: none;
     font-size: 14px;
 }
+
 .submit-action-btn {
-    padding: 10px 20px;
+    padding: 12px 24px;
     background: #002850;
     color: #ffffff;
     border: none;
@@ -192,13 +234,17 @@ body {
     cursor: pointer;
     transition: background 0.2s;
 }
+
 .submit-action-btn:hover { background: #00d2ff; color: #001a33; }
+
+/* Registry Tables Layout */
 .table-section {
     background: #ffffff;
     border-radius: 8px;
     padding: 30px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.03);
 }
+
 .table-header-row {
     display: flex;
     justify-content: space-between;
@@ -207,17 +253,21 @@ body {
     gap: 15px;
     margin-bottom: 22px;
 }
+
 .table-header-row h3 { color: #002850; font-size: 19px; }
-.search-form { display: flex; gap: 8px; }
+
+.search-form { display: flex; gap: 8px; flex-wrap: wrap; }
+
 .search-form input {
-    padding: 8px 12px;
+    padding: 10px 14px;
     border: 1px solid #cbd5e1;
     border-radius: 4px;
     outline: none;
     width: 240px;
 }
+
 .search-form button {
-    padding: 8px 16px;
+    padding: 10px 20px;
     background: #002850;
     color: white;
     border: none;
@@ -225,12 +275,77 @@ body {
     cursor: pointer;
     font-weight: 600;
 }
+
 .table-container { width: 100%; overflow-x: auto; }
+
 table { width: 100%; border-collapse: collapse; text-align: left; font-size: 14px; }
+
 th { background: #f8fafc; color: #475569; padding: 14px; font-weight: 600; border-bottom: 2px solid #e2e8f0; }
+
 td { padding: 16px 14px; border-bottom: 1px solid #e2e8f0; color: #334155; white-space: nowrap; }
+
 tr:hover td { background-color: #f8fafc; }
+
 code { background: #f1f5f9; padding: 4px 8px; border-radius: 4px; font-family: monospace; font-size: 13px; font-weight: bold; color: #0f172a; }
+
 .bold-text { font-weight: 600; color: #0f172a; }
+
 .currency-text { font-weight: 700; color: #1e293b; }
+
 .hidden-element { display: none !important; }
+
+/* =======================================================
+   STRICT RESPONSIVE MEDIA OVERRIDES
+   ======================================================= */
+@media (max-width: 992px) {
+    body {
+        flex-direction: column !important;
+    }
+    
+    /* Render active sliding toggle triggers for the mobile navigation header */
+    .admin-mobile-nav {
+        display: flex !important;
+    }
+
+    /* Pull sidebar completely off screen coordinates */
+    .sidebar {
+        transform: translateX(-100%);
+        top: 60px; /* Sits cleanly below mobile nav height boundaries */
+        height: calc(100vh - 60px);
+        width: 280px;
+    }
+
+    /* Class used by JavaScript function to slide navigation bar in */
+    .sidebar.open {
+        transform: translateX(0);
+    }
+
+    /* Expand main operational content screen allocations fully */
+    .main-workspace {
+        margin-left: 0 !important;
+        width: 100% !important;
+        padding: 20px !important;
+    }
+
+    .workspace-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+    }
+
+    .workspace-header h2 {
+        font-size: 22px !important;
+    }
+
+    .table-section {
+        padding: 15px !important;
+    }
+
+    .search-form input {
+        width: 100% !important;
+    }
+    
+    .banking-form input, .submit-action-btn {
+        width: 100% !important;
+    }
+}

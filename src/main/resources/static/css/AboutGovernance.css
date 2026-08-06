@@ -1,146 +1,227 @@
+/* =======================================================
+   SDFC BANK - CORE CORPORATE GOVERNANCE LAYOUT STYLES
+   ======================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Blocks unwanted horizontal structural overflows */
+}
+header {
+    background-color: #0f2c59;
+    color: #fff;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.bank-logo {
+    width: 50px;
+    height: 50px;
+    background-color: #dac0a3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #0f2c59;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+.logo-text h1 {
+    font-size: 1.5rem;
+}
+.logo-text p {
+    font-size: 0.8rem;
+    color: #dac0a3;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Prevents text links from breaking onto odd lines */
+}
+nav ul li a:hover, nav ul li a.active {
+    background-color: #dac0a3;
+    color: #0f2c59;
+}
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.page-title {
+    text-align: center;
+    color: #0f2c59;
+    margin-bottom: 40px;
+}
+.page-title h2 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+/* Leadership Team Style */
+.board-section {
+    margin-bottom: 50px;
+}
+.board-section h3 {
+    color: #0f2c59;
+    font-size: 1.6rem;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #0f2c59;
+    padding-bottom: 5px;
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.member-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+    padding-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+.member-card:hover {
+    transform: translateY(-5px);
+}
+.member-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.member-card h4 {
+    color: #0f2c59;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+.member-card p {
+    color: #666;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+/* Statement block */
+.statement-block {
+    background-color: #0f2c59;
+    color: white;
+    padding: 40px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+    align-items: center;
+}
+.statement-block img {
+    width: 100%;
+    border-radius: 6px;
+    height: auto;
+    display: block;
+}
+.statement-block h3 {
+    color: #dac0a3;
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+footer {
+    background-color: #0f2c59;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #f4f6f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #0f2c59;
-            color: #fff;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .bank-logo {
-            width: 50px;
-            height: 50px;
-            background-color: #dac0a3;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            color: #0f2c59;
-            font-size: 1.2rem;
-        }
-        .logo-text h1 {
-            font-size: 1.5rem;
-        }
-        .logo-text p {
-            font-size: 0.8rem;
-            color: #dac0a3;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 4px;
-        }
-        nav ul li a:hover, nav ul li a.active {
-            background-color: #dac0a3;
-            color: #0f2c59;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .page-title {
-            text-align: center;
-            color: #0f2c59;
-            margin-bottom: 40px;
-        }
-        .page-title h2 {
-            font-size: 2.3rem;
-            margin-bottom: 10px;
-        }
-        /* Leadership Team Style */
-        .board-section {
-            margin-bottom: 50px;
-        }
-        .board-section h3 {
-            color: #0f2c59;
-            font-size: 1.6rem;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #0f2c59;
-            padding-bottom: 5px;
-        }
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-        .member-card {
-            background-color: #fff;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            text-align: center;
-            padding-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
-        .member-card:hover {
-            transform: translateY(-5px);
-        }
-        .member-card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-        .member-card h4 {
-            color: #0f2c59;
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-        .member-card p {
-            color: #666;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        /* Statement block */
-        .statement-block {
-            background-color: #0f2c59;
-            color: white;
-            padding: 40px;
-            border-radius: 8px;
-            display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 30px;
-            align-items: center;
-        }
-        .statement-block img {
-            width: 100%;
-            border-radius: 6px;
-        }
-        .statement-block h3 {
-            color: #dac0a3;
-            margin-bottom: 15px;
-            font-size: 1.8rem;
-        }
-        footer {
-            background-color: #0f2c59;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-        }
-    
+/* =======================================================
+   STRICT MOBILE RESPONSIVE MEDIA OVERRIDES
+   ======================================================= */
+@media (max-width: 992px) {
+    /* Shifts upper banner parameters into a standard sequential stack */
+    header {
+        flex-direction: column !important;
+        gap: 20px !important;
+        padding: 20px !important;
+        text-align: center !important;
+    }
+
+    .logo-container {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    /* Enables cross-device fluid menu item wrapping constraints */
+    nav ul {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        padding: 0 !important;
+    }
+
+    nav ul li a {
+        padding: 6px 12px !important;
+        font-size: 13px !important;
+    }
+
+    /* Adjusts profiles grid column span logic down to tablet densities */
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+
+    /* Re-stacks ambient graphic content layout vertically */
+    .statement-block {
+        grid-template-columns: 1fr !important;
+        gap: 25px !important;
+        padding: 30px 20px !important;
+        text-align: center !important;
+    }
+
+    .statement-block img {
+        max-width: 80% !important;
+        margin: 0 auto !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .page-title h2 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Collapses profiles down to a sharp single tracking line */
+    .team-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+
+    .member-card img {
+        height: auto !important;
+    }
+
+    .statement-block img {
+        max-width: 100% !important;
+    }
+
+    .statement-block h3 {
+        font-size: 1.4rem !important;
+    }
+}

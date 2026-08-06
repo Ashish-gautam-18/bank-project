@@ -1,13 +1,21 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <!-- Essential responsive viewport configuration tag -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About SDFC Bank - Our Story</title>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/AboutStory.css">
+    
+    <!-- Link external base presentation stylesheet asset -->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/Home.css">
+    
+    <!-- Original stylesheet containing responsive overrides at the bottom -->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/AboutStory.css">
 </head>
 <body>
 
+    <!-- Header containing system sub-navigation menus -->
     <header>
         <div class="logo-container">
             <div class="bank-logo">SDFC</div>
@@ -16,23 +24,24 @@
                 <p>Secure. Digital. Future. Clean.</p>
             </div>
         </div>
-		<nav>
-		    <ul>
-				<li><a href="/client-home">Home</a></li>
-		        <li><a href="${pageContext.request.contextPath}/views/AboutStory.jsp">Our Story</a></li>
-		        <li><a href="${pageContext.request.contextPath}/views/AboutGovernance.jsp">Governance</a></li>
-		        <li><a href="${pageContext.request.contextPath}/views/AboutRules.jsp">Rules & Compliance</a></li>
-		    </ul>
-		</nav>
-
+        <nav>
+            <ul>
+                <li><a href="/client-home">Home</a></li>
+                <li><a href="${pageContext.request.contextPath}/views/AboutStory.jsp" class="active">Our Story</a></li>
+                <li><a href="${pageContext.request.contextPath}/views/AboutGovernance.jsp">Governance</a></li>
+                <li><a href="${pageContext.request.contextPath}/views/AboutRules.jsp">Rules & Compliance</a></li>
+            </ul>
+        </nav>
     </header>
 
+    <!-- Main dynamic data layout container segment -->
     <div class="container">
         <div class="hero-section">
             <h2>Shaping the Future of Banking</h2>
             <p>Empowering millions with trusted, secure, and smart financial solutions since 2010.</p>
         </div>
 
+        <!-- Corporate story multi-column content segment -->
         <div class="grid">
             <div class="story-text">
                 <h3>Who We Are</h3>
@@ -44,6 +53,7 @@
             </div>
         </div>
 
+        <!-- Core corporate pillars data block matrix -->
         <div class="values-section">
             <h3>Our Core Pillars</h3>
             <div class="values-grid">
@@ -63,9 +73,12 @@
         </div>
     </div>
 
+    <!-- Administrative tracking footer node -->
     <footer>
         <p>&copy; 2026 SDFC Bank Ltd. All Rights Reserved. Conceptualized for Project Delivery.</p>
     </footer>
 
+    <!-- Main dynamic JavaScript module reference -->
+    <script src="${pageContext.request.contextPath}/js/Home.js"></script>
 </body>
 </html>

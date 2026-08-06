@@ -1,147 +1,221 @@
+/* Global Reset & Typography */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden; /* Blocks unwanted horizontal structural overflows */
+}
+/* Header & Navigation */
+header {
+    background-color: #0f2c59;
+    color: #fff;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.bank-logo {
+    width: 50px;
+    height: 50px;
+    background-color: #dac0a3;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #0f2c59;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+.logo-text h1 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+.logo-text p {
+    font-size: 0.8rem;
+    color: #dac0a3;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Prevents text links from breaking into odd multiple lines */
+}
+nav ul li a:hover, nav ul li a.active {
+    background-color: #dac0a3;
+    color: #0f2c59;
+}
+/* Main Layout */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+.hero-section {
+    background: linear-gradient(rgba(15, 44, 89, 0.85), rgba(15, 44, 89, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
+    color: white;
+    padding: 80px 40px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.hero-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+/* Content Grid */
+.grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+.story-text h3 {
+    color: #0f2c59;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-left: 5px solid #dac0a3;
+    padding-left: 10px;
+}
+.story-text p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+.side-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    height: auto;
+    display: block;
+}
+/* Values Section */
+.values-section {
+    margin-top: 50px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.values-section h3 {
+    color: #0f2c59;
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+.value-card {
+    background-color: #f8fafc;
+    padding: 25px;
+    border-radius: 6px;
+    border-top: 4px solid #0f2c59;
+    text-align: center;
+}
+.value-card h4 {
+    color: #0f2c59;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+/* Footer */
+footer {
+    background-color: #0f2c59;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
 
-        /* Global Reset & Typography */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        body {
-            background-color: #f4f6f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        /* Header & Navigation */
-        header {
-            background-color: #0f2c59;
-            color: #fff;
-            padding: 20px 50px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        .bank-logo {
-            width: 50px;
-            height: 50px;
-            background-color: #dac0a3;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            color: #0f2c59;
-            font-size: 1.2rem;
-        }
-        .logo-text h1 {
-            font-size: 1.5rem;
-            letter-spacing: 1px;
-        }
-        .logo-text p {
-            font-size: 0.8rem;
-            color: #dac0a3;
-        }
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 20px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-        nav ul li a:hover, nav ul li a.active {
-            background-color: #dac0a3;
-            color: #0f2c59;
-        }
-        /* Main Layout */
-        .container {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .hero-section {
-            background: linear-gradient(rgba(15, 44, 89, 0.85), rgba(15, 44, 89, 0.85)), url('https://unsplash.com') no-repeat center center/cover;
-            color: white;
-            padding: 80px 40px;
-            border-radius: 8px;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .hero-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        /* Content Grid */
-        .grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-        .story-text h3 {
-            color: #0f2c59;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            border-left: 5px solid #dac0a3;
-            padding-left: 10px;
-        }
-        .story-text p {
-            margin-bottom: 20px;
-            text-align: justify;
-        }
-        .side-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        }
-        /* Values Section */
-        .values-section {
-            margin-top: 50px;
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .values-section h3 {
-            color: #0f2c59;
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 30px;
-        }
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-        .value-card {
-            background-color: #f8fafc;
-            padding: 25px;
-            border-radius: 6px;
-            border-top: 4px solid #0f2c59;
-            text-align: center;
-        }
-        .value-card h4 {
-            color: #0f2c59;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-        }
-        /* Footer */
-        footer {
-            background-color: #0f2c59;
-            color: #fff;
-            text-align: center;
-            padding: 20px;
-            margin-top: 60px;
-            font-size: 0.9rem;
-        }
-    
+/* =======================================================
+   STRICT MOBILE RESPONSIVE MEDIA OVERRIDES
+   ======================================================= */
+@media (max-width: 992px) {
+    /* Wraps header elements into a balanced vertical column layout */
+    header {
+        flex-direction: column !important;
+        gap: 20px !important;
+        padding: 20px !important;
+        text-align: center !important;
+    }
+
+    .logo-container {
+        flex-direction: column !important;
+        gap: 10px !important;
+    }
+
+    /* Enables adaptive wrapping on navigation blocks to prevent clipping */
+    nav ul {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 10px !important;
+        padding: 0 !important;
+    }
+
+    nav ul li a {
+        padding: 6px 12px !important;
+        font-size: 13px !important;
+    }
+
+    /* Collapses multi-column content layout grid into single row streams */
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    /* Stacks core values grid horizontally inside device break margins */
+    .values-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 40px 20px !important;
+        margin-bottom: 25px !important;
+    }
+
+    .hero-section h2 {
+        font-size: 1.8rem !important;
+    }
+
+    .story-text h3 {
+        font-size: 1.5rem !important;
+    }
+
+    .story-text p {
+        text-align: left !important; /* Maximizes clear typography tracing limits */
+    }
+
+    .values-section {
+        padding: 25px 20px !important;
+    }
+
+    .values-section h3 {
+        font-size: 1.6rem !important;
+        margin-bottom: 20px !important;
+    }
+}

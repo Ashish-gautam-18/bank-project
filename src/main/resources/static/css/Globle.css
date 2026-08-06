@@ -1,0 +1,104 @@
+/* =======================================================
+   SDFC BANK - GLOBAL RESPONSIVE FORM DESIGN 
+   ======================================================= */
+body {
+    background-color: #f4f7f6;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* मुख्य फ़ॉर्म कंटेनर जो डेस्कटॉप पर सीमित और मोबाइल पर फुल-विड्थ रहेगा */
+.form-container {
+    width: 90%;
+    max-width: 520px;
+    margin: 50px auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(0, 21, 43, 0.15);
+    box-sizing: border-box;
+    border-top: 5px solid #0056b3; /* SDFC Bank Blue Color */
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #00152b;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* इनपुट और लेबल को ऊपर-नीचे सेट करने के लिए */
+.form-group {
+    margin-bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #495057;
+    font-size: 14px;
+}
+
+/* सभी इनपुट्स को रिस्पॉन्सिव (100% विड्थ) बनाने के लिए */
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="password"],
+.form-group input[type="email"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid #ced4da;
+    border-radius: 5px;
+    font-size: 16px; /* मोबाइल पर ऑटो-ज़ूम रोकने के लिए */
+    color: #212529;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.25);
+}
+
+/* रिस्पॉन्सिव बटन */
+.form-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.form-btn:hover {
+    background-color: #00152b;
+}
+
+/* 📱 मोबाइल स्क्रीन के लिए मीडिया क्वेरी */
+@media (max-width: 576px) {
+    .form-container {
+        width: 95%;
+        margin: 25px auto;
+        padding: 22px;
+    }
+    .form-container h2 {
+        font-size: 20px;
+    }
+}
