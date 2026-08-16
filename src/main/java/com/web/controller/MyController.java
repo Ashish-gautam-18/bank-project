@@ -58,7 +58,7 @@ public class MyController {
 	        return "BalanceResult"; // डेटा सही होने पर ही केवल सक्सेस पेज खुलेगा
 	    } else {
 	        model.addAttribute("msg", "Invalid Account Number, Name, or Password!");
-	        return "BalanceResult"; // 🚀 यहाँ "NewBalance" की जगह "Balance" करना सबसे ज़रूरी है
+	        return "BalanceResult"; // 🚀 यहाँ "NewBalance" की जगह "Balance" करना सबसे ज़रूरी है
 	    }
 	}
 
@@ -75,10 +75,16 @@ public class MyController {
 	@PostMapping("/dep")
 	public String depositfile(@ModelAttribute Bank bank, ModelMap model) {
 		Bank moneyDeposit = service.moneyDeposit(bank);
-		model.put("before", bank.getAmount());
-		model.put("deposit", moneyDeposit.getAmount());
-		model.put("afterdeposit", bank.getAmount() + moneyDeposit.getAmount());
-		
+
+		if (moneyDeposit == null) {
+			model.put("error", "Invalid account number, name, or password!");
+			return "DepositForm";
+		}
+
+		model.put("before", moneyDeposit.getAmount() - bank.getAmount());  // purana balance
+		model.put("deposit", bank.getAmount());                            // jitna deposit kiya
+		model.put("afterdeposit", moneyDeposit.getAmount());               // naya sahi total
+
 		return "DepositSuccess";
 	}
 	
@@ -93,11 +99,16 @@ public class MyController {
 	@PostMapping("/withd")
 	public String withdrowfile(@ModelAttribute Bank bank, ModelMap model) {
 		Bank moneyWithdrow = service.moneyWithdrow(bank);
-		
-		model.put("before", bank.getAmount());
-		model.put("withdraw", moneyWithdrow.getAmount());
-		model.put("afterwithdraw", moneyWithdrow.getAmount() - bank.getAmount());
-		
+
+		if (moneyWithdrow == null) {
+			model.put("error", "Invalid account number, name, or password!");
+			return "WithdrawForm";
+		}
+
+		model.put("before", moneyWithdrow.getAmount() + bank.getAmount());  // purana balance
+		model.put("withdraw", bank.getAmount());                            // jitna nikala
+		model.put("afterwithdraw", moneyWithdrow.getAmount());              // naya sahi total
+
 		return "WithdrawSuccess";	
 	}
 	
@@ -129,16 +140,6 @@ public class MyController {
 		}
 		return "TransferSuccess"; 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	
 	

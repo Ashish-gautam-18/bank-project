@@ -1,10 +1,21 @@
 // --- Slide Transitions Logic (3-Stage Rotator Layout) ---
 let currentSlideIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
 let slideInterval;
 
+function getSlides() {
+    return document.querySelectorAll('.slide');
+}
+
+function getDots() {
+    return document.querySelectorAll('.dot');
+}
+
 function showSlide(index) {
+    const slides = getSlides();
+    const dots = getDots();
+    
+    if (slides.length === 0) return;
+
     if (index >= slides.length) currentSlideIndex = 0;
     else if (index < 0) currentSlideIndex = slides.length - 1;
     else currentSlideIndex = index;
@@ -12,8 +23,8 @@ function showSlide(index) {
     slides.forEach(slide => slide.classList.remove('active'));
     dots.forEach(dot => dot.classList.remove('active'));
 
-    slides[currentSlideIndex].classList.add('active');
-    dots[currentSlideIndex].classList.add('active');
+    if (slides[currentSlideIndex]) slides[currentSlideIndex].classList.add('active');
+    if (dots[currentSlideIndex]) dots[currentSlideIndex].classList.add('active');
 }
 
 function changeSlide(direction) {
@@ -53,7 +64,9 @@ function closeNoticeModal() {
 
 // --- Initialize Components on Document Ready ---
 document.addEventListener("DOMContentLoaded", () => {
+    const slides = getSlides();
     if (slides.length > 0) {
+        showSlide(0);
         startAutoSlide();
     }
 
