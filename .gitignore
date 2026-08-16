@@ -1,15 +1,9 @@
-<<<<<<< HEAD
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-=======
-
-/target/
-!.mvn/wrapper/maven-wrapper.jar
->>>>>>> 1a82d9a979e9ab5c08b2bb6923049742e33e90bf
 ### STS ###
 .apt_generated
 .classpath
@@ -17,11 +11,10 @@ target/
 .project
 .settings
 .springBeans
-<<<<<<< HEAD
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
@@ -38,10 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
-=======
-### IntelliJ IDEA ###
-.idea/
-*.iws
-*.iml
-*.ipr
->>>>>>> 1a82d9a979e9ab5c08b2bb6923049742e33e90bf
+
+### Database ###
+data/
+*.mv.db
+*.trace.db
