@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,39 +59,62 @@ public class AdminDashboardController {
     }
 
     @PostMapping("/admin/depo")
-    public String handleDashboardDeposit(@RequestParam("accNum") long accNum, @RequestParam("amount") double depositAmount) {
+    public String handleDashboardDeposit(@RequestParam("accNum") long accNum, @RequestParam("amount") double depositAmount, RedirectAttributes redirectAttributes) {
         try {
             Bank bankAccount = bankRepo.findByAccountNumber(accNum);
-            if (bankAccount != null && depositAmount > 0) {
+            if (bankAccount == null) {
+                redirectAttributes.addFlashAttribute("adminMsg", "Deposit failed: Account " + accNum + " not found.");
+            } else if (depositAmount <= 0) {
+                redirectAttributes.addFlashAttribute("adminMsg", "Deposit failed: Amount must be greater than zero.");
+            } else {
                 bankAccount.setAmount(bankAccount.getAmount() + depositAmount);
                 bankRepo.save(bankAccount);
+                redirectAttributes.addFlashAttribute("adminMsg", "₹" + depositAmount + " deposited successfully into account " + accNum + ".");
             }
-        } catch (Exception ignored) {}
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("adminMsg", "Deposit failed: " + e.getMessage());
+        }
         return "redirect:/admin-dashboard"; 
     }
 
     @PostMapping("/admin/transfer")
     public String handleDashboardTransfer(@RequestParam("fromAcc") long fromAcc, 
                                           @RequestParam("toAcc") long toAcc, 
-                                          @RequestParam("amount") double transferAmount) {
+                                          @RequestParam("amount") double transferAmount,
+                                          RedirectAttributes redirectAttributes) {
         try {
-            if (fromAcc != toAcc && transferAmount > 0) {
-                Bank sender = bankRepo.findByAccountNumber(fromAcc);
-                Bank receiver = bankRepo.findByAccountNumber(toAcc);
-
-                if (sender != null && receiver != null && sender.getAmount() >= transferAmount) {
-                    sender.setAmount(sender.getAmount() - transferAmount);
-                    receiver.setAmount(receiver.getAmount() + transferAmount);
-                    
-                    bankRepo.save(sender);
-                    bankRepo.save(receiver);
-                }
+            if (fromAcc == toAcc) {
+                redirectAttributes.addFlashAttribute("adminMsg", "Transfer failed: Sender and receiver account cannot be same.");
+                return "redirect:/admin-dashboard";
             }
-        } catch (Exception ignored) {}
+            if (transferAmount <= 0) {
+                redirectAttributes.addFlashAttribute("adminMsg", "Transfer failed: Amount must be greater than zero.");
+                return "redirect:/admin-dashboard";
+            }
+
+            Bank sender = bankRepo.findByAccountNumber(fromAcc);
+            Bank receiver = bankRepo.findByAccountNumber(toAcc);
+
+            if (sender == null) {
+                redirectAttributes.addFlashAttribute("adminMsg", "Transfer failed: Sender account " + fromAcc + " not found.");
+            } else if (receiver == null) {
+                redirectAttributes.addFlashAttribute("adminMsg", "Transfer failed: Receiver account " + toAcc + " not found.");
+            } else if (sender.getAmount() < transferAmount) {
+                redirectAttributes.addFlashAttribute("adminMsg", "Transfer failed: Insufficient balance in sender's account.");
+            } else {
+                sender.setAmount(sender.getAmount() - transferAmount);
+                receiver.setAmount(receiver.getAmount() + transferAmount);
+                bankRepo.save(sender);
+                bankRepo.save(receiver);
+                redirectAttributes.addFlashAttribute("adminMsg", "₹" + transferAmount + " transferred successfully from " + fromAcc + " to " + toAcc + ".");
+            }
+        } catch (Exception e) {
+            redirectAttributes.addFlashAttribute("adminMsg", "Transfer failed: " + e.getMessage());
+        }
         return "redirect:/admin-dashboard"; 
     }
-    
-    @GetMapping("/deleteAccount")
+
+    @PostMapping("/deleteAccount")
     public String deleteAccount(@RequestParam("acc_number") long accNum) {
         try {
             bankRepo.deleteById(accNum);

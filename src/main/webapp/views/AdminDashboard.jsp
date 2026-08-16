@@ -49,6 +49,13 @@
             <div class="connection-pill">Live Connection Database</div>
         </header>
 
+        <% if (request.getAttribute("adminMsg") != null) { %>
+            <div style="margin: 10px 0; padding: 12px 16px; border-radius: 6px; font-weight: 600;
+                        background: rgba(46, 204, 113, 0.15); border: 1px solid #2ecc71; color: #2ecc71;">
+                <%= request.getAttribute("adminMsg") %>
+            </div>
+        <% } %>
+
         <!-- Interactive Bank Status Summary Metrics Cards -->
         <section class="metrics-grid">
             <div class="metric-card">
@@ -124,11 +131,14 @@
                                 <td><%= acc.getAddress() %></td>
                                 <td class="currency-text">₹<%= acc.getAmount() %></td>
                                 <td>
-                                    <a href="${pageContext.request.contextPath}/deleteAccount?acc_number=<%= acc.getAcc_number() %>" 
-                                       onclick="return confirm('Confirm : Are you sure to do this.?');" 
-                                       style="color: #ff4d4d; font-weight: bold; text-decoration: none; border: 1px solid #ff4d4d; padding: 4px 8px; border-radius: 4px; background: rgba(255,77,77,0.1);">
-                                       Delete
-                                    </a>
+                                    <form action="${pageContext.request.contextPath}/deleteAccount" method="post" style="display:inline;"
+                                          onsubmit="return confirm('Confirm : Are you sure to do this.?');">
+                                        <input type="hidden" name="acc_number" value="<%= acc.getAcc_number() %>" />
+                                        <button type="submit"
+                                                style="color: #ff4d4d; font-weight: bold; border: 1px solid #ff4d4d; padding: 4px 8px; border-radius: 4px; background: rgba(255,77,77,0.1); cursor: pointer; font-size: inherit; font-family: inherit;">
+                                            Delete
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                         <% 
