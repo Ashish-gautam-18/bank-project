@@ -92,7 +92,7 @@ public class BankServicesImp implements BankService {
 			return null;
 		}
 
-		if (bank.getName().equals(bank1.getName()) &&
+		if (bank.getName().equalsIgnoreCase(bank1.getName()) &&
 				passwordEncoder.matches(bank.getPassword(), bank1.getPassword())) {
 
 			bank1.setAmount(bank.getAmount() + bank1.getAmount());
@@ -111,7 +111,7 @@ public class BankServicesImp implements BankService {
 			return null;
 		}
 
-		if (bank.getName().equals(bank1.getName()) &&
+		if (bank.getName().equalsIgnoreCase(bank1.getName()) &&
 				passwordEncoder.matches(bank.getPassword(), bank1.getPassword())) {
 
 			if (bank1.getAmount() < bank.getAmount()) {
