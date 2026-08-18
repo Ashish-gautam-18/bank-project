@@ -62,7 +62,8 @@ CREATE TABLE IF NOT EXISTS accounts (
    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/8a5b556b-1f2c-41d1-a6cc-b4d4c9614e7c" />
 
 
-   <img width="1920" height="1080" alt="Screenshot (157)" src="https://github.com/user-attachments/assets/9817d266-364e-4f1f-9f67-5488584c7646" />
+  <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/851e4a4c-b791-46e7-ad1a-800d9bb8c928" />
+
 
    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2f0b6dd3-a3a5-4e6a-a9c4-edb21fd21175" />
 
