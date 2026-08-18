@@ -69,7 +69,9 @@ CREATE TABLE IF NOT EXISTS accounts (
 
    ## Admin Login
    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/b3e2c617-9bab-4284-8d0a-ac562947f04a" />
-
+   
+   ## Operations Management Dashboard 
+   <img width="1920" height="1080" alt="Screenshot (226)" src="https://github.com/user-attachments/assets/8bf71a02-0c5a-45be-bd4c-132de284c7f7" />
 
    ## Open New Account
    <img width="1920" height="1080" alt="Screenshot (159)" src="https://github.com/user-attachments/assets/c3c97840-44c9-4687-a1a4-de114e201d6c" />
