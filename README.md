@@ -1,4 +1,4 @@
-# 🚀 Spring Boot JSP & MySQL Project
+# 🚀 Spring Boot JSP & MySQL Projects
 
 This is a full-stack web application built using Spring Boot, JSP, and a MySQL database.
 
