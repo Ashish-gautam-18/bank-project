@@ -4,8 +4,7 @@ This is a full-stack web application built using Spring Boot, JSP, and a MySQL d
 
 ## 🛠️ Technologies Used
 
-### Tech Stack: Spring Boot, JSP, Java, MySQL, MVC Architecture, Spring Security (BCrypt), HTML/CSS
-
+### Tech Stack: Spring Boot, JSP, Java, MySQL, MVC Architecture, Spring Security (BCrypt), JS,HTML/CSS
 ● Core Banking Operations: Built a web application to handle Account Creation, Deposits, Withdrawals, and Account Closures 
 using MVC architecture.
 
