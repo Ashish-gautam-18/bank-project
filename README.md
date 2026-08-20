@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS accounts (
 
    <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2f0b6dd3-a3a5-4e6a-a9c4-edb21fd21175" />
 
-   ## SDFC Security Notice
+   ## SDFC  Popup Security Notice
    <img width="1920" height="1080" alt="Screenshot (170)" src="https://github.com/user-attachments/assets/3ebc32ee-224d-4ddc-82cb-480a0718b05a" />
 
    ## Admin Login
